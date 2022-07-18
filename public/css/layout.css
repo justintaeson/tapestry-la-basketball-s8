@@ -1,0 +1,64 @@
+body{
+  margin: 0;
+}
+
+#main {
+  height: 100%;
+}
+
+.row {
+  display: flex;
+}
+
+.column-one-half {
+  display: flex;
+  width: 50%;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.header-links {
+  padding: 0 2rem;
+}
+
+#logo {
+  height: 3rem;
+  padding-left: 3rem;
+}
+
+.justify-end {
+  justify-content: end;
+}
+
+#video-row {
+  height: 100vh;
+  position: relative;
+}
+
+#about-video {
+  object-fit: fill;
+  width: 100vw;
+}
+
+.home-text {
+  position: absolute;
+  color: yellow;
+}
+
+#tapestry-la {
+  top: 30%;
+}
+
+#basketball-league {
+  top: 40%;
+}
+
+#season-8 {
+  top: 50%;
+}
