@@ -1,0 +1,22 @@
+body {
+  font-family: "Bebas Neue", cursive;
+}
+
+#header {
+  background-color: black;
+  color: white;
+}
+
+.header-links {
+  color: white;
+  text-decoration: none;
+}
+
+.header-links:hover {
+  cursor: pointer;
+  color: orange;
+}
+
+#about-video {
+  filter: brightness(50%);
+}
