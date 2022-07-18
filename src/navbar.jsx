@@ -13,25 +13,27 @@ export default class NavBar extends React.Component{
   handleClick(event) {
     if (event.target.id === 'home') {
       window.location.hash = '';
+      console.log(window.location.hash)
     }
     if (event.target.id === 'schedule') {
       window.location.hash = 'schedule';
+      console.log(window.location.hash)
     }
   }
 
   render() {
     return (
       <header id="header">
-        <div id="header-row" class="row">
-          <div class="column-one-half align-center">
+        <div id="header-row" className="row">
+          <div className="column-one-half align-center">
             <img id="logo" src={TapestryLALogo} alt='TapestryLA-logo'/>
           </div>
-          <div class="column-one-half align-center justify-end">
-            <a href="!#" id="home" className="header-links" onClick={this.handleClick}>Home</a>
-            <a href="!#" id="schedule" className="header-links" onClick={this.handleClick}>Schedule</a>
-            <a href="!#" id="teams" className="header-links" onClick={this.handleClick}>Teams</a>
-            <a href="!#" id="stats" className="header-links" onClick={this.handleClick}>Stats</a>
-            <a href="https://www.tapestry.la/" id="tapestry-website" class="header-links" target="_blank" rel="noreferrer">Tapestry LA</a>
+          <div className="column-one-half align-center justify-end">
+            <a id="home" className="header-links" onClick={this.handleClick}>Home</a>
+            <a id="schedule" className="header-links" onClick={this.handleClick}>Schedule</a>
+            <a id="teams" className="header-links" onClick={this.handleClick}>Teams</a>
+            <a id="stats" className="header-links" onClick={this.handleClick}>Stats</a>
+            <a href="https://www.tapestry.la/" id="tapestry-website" className="header-links" target="_blank" rel="noreferrer">Tapestry LA</a>
           </div>
         </div>
       </header>
