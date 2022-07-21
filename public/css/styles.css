@@ -20,3 +20,16 @@ body {
 #about-video {
   filter: brightness(50%);
 }
+
+#schedule-row {
+  padding: 1rem;
+}
+
+.box {
+  border: black solid 1px;
+}
+
+.home-score,
+.away-score {
+  font-size: 3rem;
+}

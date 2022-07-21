@@ -8,11 +8,13 @@ body{
 
 .row {
   display: flex;
+  width: 100%;
 }
 
 .column-one-half {
   display: flex;
   width: 50%;
+  margin: 0;
 }
 
 .justify-center {
@@ -61,4 +63,37 @@ body{
 
 #season-8 {
   top: 50%;
+}
+
+.box {
+  width: 50%;
+  display: flex;
+  margin: 2rem;
+  padding: 1rem;
+}
+
+.schedule-row {
+  display: flex;
+  justify-content: center;
+}
+
+.flex-column{
+  flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.game-info{
+  display: flex;
+  width: 100%;
+  margin: auto;
+}
+
+.home-content,
+.home-score,
+.away-content,
+.away-score{
+  margin: 1rem 0;
 }

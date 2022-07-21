@@ -3,6 +3,10 @@ export const players = [
     name: 'Sharon Lee',
     team: 'Victorious Secret',
     points: [],
+    fgMakes: [],
+    fgAttempts: [],
+    ftMakes: [],
+    ftAttempts: [],
     image: null
   },
   {
