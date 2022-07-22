@@ -16,7 +16,7 @@ export default class Schedule extends React.Component {
         games.homeScore = "--";
       }
       return (
-        <div className="schedule-row">
+        <div key={games.week + games.time} className="schedule-row">
           <div className="box flex-wrap">
             <div className="row">
               <div className="column-one-half flex-column align-center">
