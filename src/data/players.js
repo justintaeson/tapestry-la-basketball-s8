@@ -185,61 +185,61 @@ export const players = [
   },
   {
     name: 'Eugene Lim',
-    team: 'TBD',
+    team: 'Run JHC',
     points: [],
     image: null
   },
   {
     name: 'Joshua Chung',
-    team: 'TBD',
+    team: 'Run JHC',
     points: [],
     image: null
   },
   {
     name: 'David Moon',
-    team: 'TBD',
+    team: 'Run JHC',
     points: [],
     image: null
   },
   {
     name: 'Eric Byun',
-    team: 'TBD',
+    team: 'Run JHC',
     points: [],
     image: null
   },
   {
     name: 'Olivia DeRienzo',
-    team: 'TBD',
+    team: 'Run JHC',
     points: [],
     image: null
   },
   {
     name: 'John Huddleston',
-    team: 'TBD',
+    team: 'Run JHC',
     points: [],
     image: null
   },
   {
     name: 'Jacob Joe',
-    team: 'TBD',
+    team: 'Run JHC',
     points: [],
     image: null
   },
   {
     name: 'James Lee',
-    team: 'TBD',
+    team: 'Run JHC',
     points: [],
     image: null
   },
   {
     name: 'Jay Lee',
-    team: 'TBD',
+    team: 'Run JHC',
     points: [],
     image: null
   },
   {
     name: 'Timothy Yu',
-    team: 'TBD',
+    team: 'Run JHC',
     points: [],
     image: null
   },

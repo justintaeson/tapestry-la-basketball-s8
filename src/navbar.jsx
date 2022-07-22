@@ -13,10 +13,12 @@ export default class NavBar extends React.Component {
   handleClick(event) {
     if (event.target.id === "home") {
       window.location.hash = "";
-      console.log(window.location.hash);
     }
     if (event.target.id === "schedule") {
       window.location.hash = "schedule";
+    }
+    if (event.target.id === "teams") {
+      window.location.hash = "teams";
       console.log(window.location.hash);
     }
   }

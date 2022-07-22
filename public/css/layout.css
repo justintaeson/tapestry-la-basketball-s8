@@ -97,3 +97,14 @@ body{
 .away-score{
   margin: 1rem 0;
 }
+
+.teams-box {
+  width: 50%;
+  display: flex;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.teams-row {
+  display: flex;
+}

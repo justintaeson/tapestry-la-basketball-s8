@@ -25,11 +25,18 @@ body {
   padding: 1rem;
 }
 
-.box {
+.box,
+.teams-box {
   border: black solid 1px;
 }
 
 .home-score,
 .away-score {
   font-size: 3rem;
+}
+
+.teams-box:hover{
+  cursor: pointer;
+  background-color: blue;
+  color:white
 }
