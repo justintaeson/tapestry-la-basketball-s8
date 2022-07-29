@@ -1,29 +1,45 @@
-import React from "react";
-import TapestryLALogo from "./assets/tapestry-logo.png";
+import React from 'react';
+import TapestryLALogo from './assets/tapestry-logo.png';
 
 export default class NavBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      clickedOn: null,
+      clickedOn: null
     };
     this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick(event) {
-    if (event.target.id === "home") {
-      window.location.hash = "";
+
+    // eslint-disable-next-line
+    console.log(window.location.hash);
+    if (window.location.hash === '#' + event.target.id) {
+      location.reload();
     }
-    if (event.target.id === "schedule") {
-      window.location.hash = "schedule";
+    if (event.target.id === 'home') {
+      window.location.hash = '';
     }
-    if (event.target.id === "teams") {
-      window.location.hash = "teams";
-      console.log(window.location.hash);
+    if (event.target.id === 'schedule') {
+      window.location.hash = 'schedule';
+    }
+    if (event.target.id === 'teams') {
+      window.location.hash = 'teams';
     }
   }
 
+  componentDidMount() {
+    window.scroll({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
+
   render() {
+    window.scroll({
+      top: 0,
+      behavior: 'smooth'
+    });
     return (
       <header id="header">
         <div id="header-row" className="row">
@@ -31,12 +47,7 @@ export default class NavBar extends React.Component {
             <img id="logo" src={TapestryLALogo} alt="TapestryLA-logo" />
           </div>
           <div className="column-one-half align-center justify-end">
-            <a
-              href="/#"
-              id="home"
-              className="header-links flex-nowrap"
-              onClick={this.handleClick}
-            >
+            <a href="/#" id="home" className="header-links flex-nowrap" onClick={this.handleClick}>
               Home
             </a>
             <a

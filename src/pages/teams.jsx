@@ -1,38 +1,36 @@
-import React from "react";
-import { players as PlayersData } from "../data/players";
+import React from 'react';
+import { players as PlayersData, getAverage } from '../data/players';
 
 export default class Teams extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      team: null,
+      team: null
     };
     this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick(event) {
-    this.setState({
-      team: event.target.childNodes[0].data,
-    });
+    if (event.target.childNodes[0].data) {
+
+      this.setState({
+        team: event.target.childNodes[0].data
+      });
+    }
   }
 
   componentDidMount() {
-    window.addEventListener("hashchange", () => {
+    window.addEventListener('hashchange', () => {
       this.setState({
-        team: window.location.hash,
       });
     });
   }
 
   render() {
-    const teams = PlayersData.map((player) => {
+    const teams = PlayersData.map(player => {
       if (PlayersData.indexOf(player) % 10 === 0) {
         return (
-          <div
-            key={player.team}
-            className="teams-row justify-center"
-            onClick={this.handleClick}
-          >
+          <div key={player.team} className="teams-row justify-center" onClick={this.handleClick}>
             <div className="teams-box">
               <div className="row justify-center">{player.team}</div>
             </div>
@@ -41,20 +39,58 @@ export default class Teams extends React.Component {
       } else return null;
     });
 
-    const playersData = PlayersData.map((player) => {
+    const playersData = PlayersData.map(player => {
       if (player.team === this.state.team) {
         return (
           <tr key={player.name}>
             <td>{player.name}</td>
-            <td>{}</td>
-            <td>{}</td>
-            <td>{player.threeMakes}</td>
-            <td>{player.threeAttempts}</td>
-            <td>{player.ftMakes}</td>
-            <td>{player.ftAttempts}</td>
-            <td>{}</td>
+            <td>
+              {getAverage(player.twoMakes).toFixed(1) +
+                ' / ' +
+                getAverage(player.twoAttempts).toFixed(1)}
+            </td>
+            <td>
+              {((getAverage(player.twoMakes) / getAverage(player.twoAttempts)) * 100).toFixed(2) +
+                '%'}
+            </td>
+            <td>
+              {getAverage(player.threeMakes).toFixed(1) +
+                ' / ' +
+                getAverage(player.threeAttempts).toFixed(1)}
+            </td>
+            <td>
+              {((getAverage(player.threeMakes) / getAverage(player.threeAttempts)) * 100).toFixed(
+                2
+              ) + '%'}
+            </td>
+            <td>
+              {getAverage(player.ftMakes).toFixed(1) +
+                ' / ' +
+                getAverage(player.ftAttempts).toFixed(1)}
+            </td>
+            <td>
+              {((getAverage(player.ftMakes) / getAverage(player.ftAttempts)) * 100).toFixed(2) +
+                '%'}
+            </td>
+            <td>
+              {(getAverage(player.twoMakes) + getAverage(player.threeMakes)).toFixed(1) +
+                ' / ' +
+                (getAverage(player.twoAttempts) + getAverage(player.threeAttempts)).toFixed(1)}
+            </td>
+            <td>
+              {(
+                ((getAverage(player.twoMakes) + getAverage(player.threeMakes)) /
+                  (getAverage(player.twoAttempts) + getAverage(player.threeAttempts))) *
+                100
+              ).toFixed(2) + '%'}
+            </td>
+            <td>
+              {(getAverage(player.twoMakes) * 2 + getAverage(player.threeMakes) * 3).toFixed(1)}
+            </td>
           </tr>
         );
+      } else {
+        return null;
       }
     });
 
@@ -62,16 +98,18 @@ export default class Teams extends React.Component {
       return teams;
     } else {
       return (
-        <table>
+        <table className='teams-table'>
           <tbody>
             <tr>
               <th>Player</th>
-              <th>FG-M</th>
-              <th>FG-A </th>
-              <th>3PT-M</th>
-              <th>3PT-A</th>
-              <th>FT-M</th>
-              <th>FT-A</th>
+              <th>2PT</th>
+              <th>2PT FG% </th>
+              <th>3PT</th>
+              <th>3PT FG%</th>
+              <th>FT</th>
+              <th>FT%</th>
+              <th>FG</th>
+              <th>FG%</th>
               <th>PPG</th>
             </tr>
             {playersData}

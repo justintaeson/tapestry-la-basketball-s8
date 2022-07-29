@@ -1,8 +1,28 @@
+export function getAverage(stat) {
+  const initialValue = 0;
+  const sum = stat.reduce(
+    (previousValue, currentValue) => previousValue + currentValue,
+    initialValue
+  );
+
+  const average = sum / stat.length + 1;
+  return average;
+}
+
+export function getSum(stat) {
+  const initialValue = 0;
+  const sum = stat.reduce(
+    (previousValue, currentValue) => previousValue + currentValue,
+    initialValue
+  );
+
+  return sum;
+}
+
 export const players = [
   {
     name: 'Sharon Lee',
     team: 'Victorious Secret',
-    points: [],
     twoMakes: [1],
     twoAttempts: [3],
     ftMakes: [0],
@@ -14,7 +34,6 @@ export const players = [
   {
     name: 'Daniel Kim',
     team: 'Victorious Secret',
-    points: [],
     twoMakes: [null],
     twoAttempts: [null],
     ftMakes: [null],
@@ -26,7 +45,6 @@ export const players = [
   {
     name: 'Justin Son',
     team: 'Victorious Secret',
-    points: [],
     twoMakes: [3],
     twoAttempts: [4],
     ftMakes: [0],
@@ -38,19 +56,17 @@ export const players = [
   {
     name: 'Brian Shin',
     team: 'Victorious Secret',
-    points: [],
     twoMakes: [0],
     twoAttempts: [1],
     ftMakes: [4],
-    ftAttempts: [0],
-    threeMakes: [1],
-    threeAttempts: [0],
+    ftAttempts: [4],
+    threeMakes: [0],
+    threeAttempts: [1],
     image: null
   },
   {
     name: 'Charles Choe',
     team: 'Victorious Secret',
-    points: [],
     twoMakes: [2],
     twoAttempts: [8],
     ftMakes: [0],
@@ -62,7 +78,6 @@ export const players = [
   {
     name: 'Dylan Wong',
     team: 'Victorious Secret',
-    points: [],
     twoMakes: [1],
     twoAttempts: [5],
     ftMakes: [3],
@@ -74,7 +89,6 @@ export const players = [
   {
     name: 'Jin Park',
     team: 'Victorious Secret',
-    points: [],
     twoMakes: [3],
     twoAttempts: [3],
     ftMakes: [0],
@@ -86,7 +100,6 @@ export const players = [
   {
     name: 'Joseph Lee',
     team: 'Victorious Secret',
-    points: [],
     twoMakes: [3],
     twoAttempts: [9],
     ftMakes: [0],
@@ -98,7 +111,6 @@ export const players = [
   {
     name: 'Ju Pyung Chung',
     team: 'Victorious Secret',
-    points: [],
     twoMakes: [null],
     twoAttempts: [null],
     ftMakes: [null],
@@ -110,7 +122,6 @@ export const players = [
   {
     name: 'Kevin Lee',
     team: 'Victorious Secret',
-    points: [],
     twoMakes: [0],
     twoAttempts: [1],
     ftMakes: [0],
@@ -122,7 +133,6 @@ export const players = [
   {
     name: 'Daniel Kurniawan',
     team: 'ABG (Anointed by God)',
-    points: [],
     twoMakes: [2],
     twoAttempts: [3],
     ftMakes: [3],
@@ -134,7 +144,6 @@ export const players = [
   {
     name: 'Sang Park',
     team: 'ABG (Anointed by God)',
-    points: [],
     twoMakes: [1],
     twoAttempts: [3],
     ftMakes: [2],
@@ -146,7 +155,6 @@ export const players = [
   {
     name: 'Jacob Lee',
     team: 'ABG (Anointed by God)',
-    points: [],
     twoMakes: [0],
     twoAttempts: [2],
     ftMakes: [0],
@@ -158,7 +166,6 @@ export const players = [
   {
     name: 'Stephanie Kim',
     team: 'ABG (Anointed by God)',
-    points: [],
     twoMakes: [null],
     twoAttempts: [null],
     ftMakes: [null],
@@ -170,7 +177,6 @@ export const players = [
   {
     name: 'Anthony Kim',
     team: 'ABG (Anointed by God)',
-    points: [],
     twoMakes: [0],
     twoAttempts: [0],
     ftMakes: [0],
@@ -182,7 +188,6 @@ export const players = [
   {
     name: 'Chase Boswell',
     team: 'ABG (Anointed by God)',
-    points: [],
     twoMakes: [0],
     twoAttempts: [0],
     ftMakes: [0],
@@ -194,7 +199,6 @@ export const players = [
   {
     name: 'Jonathan Lee',
     team: 'ABG (Anointed by God)',
-    points: [],
     twoMakes: [2],
     twoAttempts: [6],
     ftMakes: [0],
@@ -206,7 +210,6 @@ export const players = [
   {
     name: 'Joon Jang',
     team: 'ABG (Anointed by God)',
-    points: [],
     twoMakes: [0],
     twoAttempts: [2],
     ftMakes: [2],
@@ -218,7 +221,6 @@ export const players = [
   {
     name: 'Andrew Pak',
     team: 'ABG (Anointed by God)',
-    points: [],
     twoMakes: [1],
     twoAttempts: [2],
     ftMakes: [1],
@@ -230,7 +232,6 @@ export const players = [
   {
     name: 'TJ Kim',
     team: 'ABG (Anointed by God)',
-    points: [],
     twoMakes: [1],
     twoAttempts: [4],
     ftMakes: [0],
@@ -242,7 +243,6 @@ export const players = [
   {
     name: 'Duggy Jeong',
     team: 'Better Call Gasol',
-    points: [],
     twoMakes: [2],
     twoAttempts: [3],
     ftMakes: [0],
@@ -254,7 +254,6 @@ export const players = [
   {
     name: 'Al Kao',
     team: 'Better Call Gasol',
-    points: [],
     twoMakes: [0],
     twoAttempts: [8],
     ftMakes: [0],
@@ -266,7 +265,6 @@ export const players = [
   {
     name: 'Doulos Kun',
     team: 'Better Call Gasol',
-    points: [],
     twoMakes: [null],
     twoAttempts: [null],
     ftMakes: [null],
@@ -278,7 +276,6 @@ export const players = [
   {
     name: 'Ethan Hu',
     team: 'Better Call Gasol',
-    points: [],
     twoMakes: [4],
     twoAttempts: [4],
     ftMakes: [0],
@@ -290,7 +287,6 @@ export const players = [
   {
     name: 'Grace Lee',
     team: 'Better Call Gasol',
-    points: [],
     twoMakes: [1],
     twoAttempts: [2],
     ftMakes: [1],
@@ -302,7 +298,6 @@ export const players = [
   {
     name: 'Jason Leung',
     team: 'Better Call Gasol',
-    points: [],
     twoMakes: [2],
     twoAttempts: [4],
     ftMakes: [0],
@@ -314,7 +309,6 @@ export const players = [
   {
     name: 'Jonathan Lee',
     team: 'Better Call Gasol',
-    points: [],
     twoMakes: [1],
     twoAttempts: [5],
     ftMakes: [2],
@@ -326,7 +320,6 @@ export const players = [
   {
     name: 'Maximus Chung',
     team: 'Better Call Gasol',
-    points: [],
     twoMakes: [null],
     twoAttempts: [null],
     ftMakes: [null],
@@ -338,7 +331,6 @@ export const players = [
   {
     name: 'Nick Ryu',
     team: 'Better Call Gasol',
-    points: [],
     twoMakes: [1],
     twoAttempts: [5],
     ftMakes: [0],
@@ -350,7 +342,6 @@ export const players = [
   {
     name: 'Peter Yu',
     team: 'Better Call Gasol',
-    points: [],
     twoMakes: [0],
     twoAttempts: [1],
     ftMakes: [2],
@@ -362,7 +353,6 @@ export const players = [
   {
     name: 'Eugene Lim',
     team: 'Run JHC',
-    points: [],
     twoMakes: [0],
     twoAttempts: [0],
     ftMakes: [0],
@@ -374,7 +364,6 @@ export const players = [
   {
     name: 'Joshua Chung',
     team: 'Run JHC',
-    points: [],
     twoMakes: [5],
     twoAttempts: [11],
     ftMakes: [9],
@@ -386,7 +375,6 @@ export const players = [
   {
     name: 'David Moon',
     team: 'Run JHC',
-    points: [],
     twoMakes: [2],
     twoAttempts: [3],
     ftMakes: [0],
@@ -398,7 +386,6 @@ export const players = [
   {
     name: 'Eric Byun',
     team: 'Run JHC',
-    points: [],
     twoMakes: [0],
     twoAttempts: [1],
     ftMakes: [1],
@@ -410,7 +397,6 @@ export const players = [
   {
     name: 'Olivia DeRienzo',
     team: 'Run JHC',
-    points: [],
     twoMakes: [1],
     twoAttempts: [3],
     ftMakes: [0],
@@ -422,7 +408,6 @@ export const players = [
   {
     name: 'John Huddleston',
     team: 'Run JHC',
-    points: [],
     twoMakes: [0],
     twoAttempts: [0],
     ftMakes: [0],
@@ -434,7 +419,6 @@ export const players = [
   {
     name: 'Jacob Joe',
     team: 'Run JHC',
-    points: [],
     twoMakes: [0],
     twoAttempts: [0],
     ftMakes: [0],
@@ -446,7 +430,6 @@ export const players = [
   {
     name: 'James Lee',
     team: 'Run JHC',
-    points: [],
     twoMakes: [null],
     twoAttempts: [null],
     ftMakes: [null],
@@ -458,7 +441,6 @@ export const players = [
   {
     name: 'Jay Lee',
     team: 'Run JHC',
-    points: [],
     twoMakes: [1],
     twoAttempts: [2],
     ftMakes: [1],
@@ -470,7 +452,6 @@ export const players = [
   {
     name: 'Timothy Yu',
     team: 'Run JHC',
-    points: [],
     twoMakes: [1],
     twoAttempts: [2],
     ftMakes: [4],
@@ -482,7 +463,6 @@ export const players = [
   {
     name: 'James Lee',
     team: 'J-Walkers',
-    points: [],
     twoMakes: [null],
     twoAttempts: [null],
     ftMakes: [null],
@@ -494,7 +474,6 @@ export const players = [
   {
     name: 'Allan Eckart',
     team: 'J-Walkers',
-    points: [],
     twoMakes: [null],
     twoAttempts: [null],
     ftMakes: [null],
@@ -506,7 +485,6 @@ export const players = [
   {
     name: 'Gene Kum',
     team: 'J-Walkers',
-    points: [],
     twoMakes: [null],
     twoAttempts: [null],
     ftMakes: [null],
@@ -518,7 +496,6 @@ export const players = [
   {
     name: 'Ian Byun',
     team: 'J-Walkers',
-    points: [],
     twoMakes: [null],
     twoAttempts: [null],
     ftMakes: [null],
@@ -530,7 +507,6 @@ export const players = [
   {
     name: 'Joe Lee',
     team: 'J-Walkers',
-    points: [],
     twoMakes: [null],
     twoAttempts: [null],
     ftMakes: [null],
@@ -542,7 +518,6 @@ export const players = [
   {
     name: 'Lauren Kong',
     team: 'J-Walkers',
-    points: [],
     twoMakes: [null],
     twoAttempts: [null],
     ftMakes: [null],
@@ -554,7 +529,6 @@ export const players = [
   {
     name: 'Mike Su',
     team: 'J-Walkers',
-    points: [],
     twoMakes: [null],
     twoAttempts: [null],
     ftMakes: [null],
@@ -566,7 +540,6 @@ export const players = [
   {
     name: 'Paul Kim',
     team: 'J-Walkers',
-    points: [],
     twoMakes: [null],
     twoAttempts: [null],
     ftMakes: [null],
@@ -578,7 +551,6 @@ export const players = [
   {
     name: 'Raymond Kim',
     team: 'J-Walkers',
-    points: [],
     twoMakes: [null],
     twoAttempts: [null],
     ftMakes: [null],
@@ -590,7 +562,6 @@ export const players = [
   {
     name: 'Timothy Jao',
     team: 'J-Walkers',
-    points: [],
     twoMakes: [null],
     twoAttempts: [null],
     ftMakes: [null],
@@ -602,7 +573,6 @@ export const players = [
   {
     name: 'Jin Bae',
     team: 'Goon Squad',
-    points: [],
     twoMakes: [5],
     twoAttempts: [14],
     ftMakes: [1],
@@ -614,7 +584,6 @@ export const players = [
   {
     name: 'Angeline Quach',
     team: 'Goon Squad',
-    points: [],
     twoMakes: [1],
     twoAttempts: [1],
     ftMakes: [0],
@@ -626,7 +595,6 @@ export const players = [
   {
     name: 'Benjamin Lee',
     team: 'Goon Squad',
-    points: [],
     twoMakes: [null],
     twoAttempts: [null],
     ftMakes: [null],
@@ -638,7 +606,6 @@ export const players = [
   {
     name: 'David Lee',
     team: 'Goon Squad',
-    points: [],
     twoMakes: [1],
     twoAttempts: [2],
     ftMakes: [0],
@@ -650,7 +617,6 @@ export const players = [
   {
     name: 'Insoo Kim',
     team: 'Goon Squad',
-    points: [],
     twoMakes: [0],
     twoAttempts: [1],
     ftMakes: [0],
@@ -662,7 +628,6 @@ export const players = [
   {
     name: 'Ivan Huang',
     team: 'Goon Squad',
-    points: [],
     twoMakes: [2],
     twoAttempts: [4],
     ftMakes: [1],
@@ -674,7 +639,6 @@ export const players = [
   {
     name: 'Jeffrey Zhu',
     team: 'Goon Squad',
-    points: [],
     twoMakes: [0],
     twoAttempts: [1],
     ftMakes: [1],
@@ -686,7 +650,6 @@ export const players = [
   {
     name: 'Joon Kim',
     team: 'Goon Squad',
-    points: [],
     twoMakes: [2],
     twoAttempts: [4],
     ftMakes: [0],
@@ -698,7 +661,6 @@ export const players = [
   {
     name: 'Sil Han Jin',
     team: 'Goon Squad',
-    points: [],
     twoMakes: [3],
     twoAttempts: [7],
     ftMakes: [1],
@@ -710,7 +672,6 @@ export const players = [
   {
     name: 'Sung Cho',
     team: 'Goon Squad',
-    points: [],
     twoMakes: [0],
     twoAttempts: [1],
     ftMakes: [0],
@@ -722,7 +683,6 @@ export const players = [
   {
     name: 'Luke Bae',
     team: 'Crossovers For Christ',
-    points: [],
     twoMakes: [3],
     twoAttempts: [4],
     ftMakes: [3],
@@ -734,7 +694,6 @@ export const players = [
   {
     name: 'Aaron Kim',
     team: 'Crossovers For Christ',
-    points: [],
     twoMakes: [2],
     twoAttempts: [3],
     ftMakes: [0],
@@ -746,7 +705,6 @@ export const players = [
   {
     name: 'Jonathan Kim',
     team: 'Crossovers For Christ',
-    points: [],
     twoMakes: [0],
     twoAttempts: [0],
     ftMakes: [0],
@@ -758,7 +716,6 @@ export const players = [
   {
     name: 'Kevin Ra',
     team: 'Crossovers For Christ',
-    points: [],
     twoMakes: [3],
     twoAttempts: [6],
     ftMakes: [0],
@@ -770,7 +727,6 @@ export const players = [
   {
     name: 'Kimberly Huang',
     team: 'Crossovers For Christ',
-    points: [],
     twoMakes: [2],
     twoAttempts: [4],
     ftMakes: [1],
@@ -782,7 +738,6 @@ export const players = [
   {
     name: 'Michael Lin',
     team: 'Crossovers For Christ',
-    points: [],
     twoMakes: [0],
     twoAttempts: [1],
     ftMakes: [0],
@@ -794,7 +749,6 @@ export const players = [
   {
     name: 'Nate Lee',
     team: 'Crossovers For Christ',
-    points: [],
     twoMakes: [0],
     twoAttempts: [0],
     ftMakes: [4],
@@ -806,7 +760,6 @@ export const players = [
   {
     name: 'Paul You',
     team: 'Crossovers For Christ',
-    points: [],
     twoMakes: [1],
     twoAttempts: [1],
     ftMakes: [0],
@@ -818,7 +771,6 @@ export const players = [
   {
     name: 'Simon Hwang',
     team: 'Crossovers For Christ',
-    points: [],
     twoMakes: [1],
     twoAttempts: [1],
     ftMakes: [0],
@@ -830,7 +782,6 @@ export const players = [
   {
     name: 'William Sohn',
     team: 'Crossovers For Christ',
-    points: [],
     twoMakes: [0],
     twoAttempts: [1],
     ftMakes: [0],
@@ -842,7 +793,6 @@ export const players = [
   {
     name: 'Max Lee',
     team: 'Team Noona',
-    points: [],
     twoMakes: [1],
     twoAttempts: [2],
     ftMakes: [0],
@@ -854,7 +804,6 @@ export const players = [
   {
     name: 'Andrew Chia',
     team: 'Team Noona',
-    points: [],
     twoMakes: [0],
     twoAttempts: [0],
     ftMakes: [0],
@@ -866,7 +815,6 @@ export const players = [
   {
     name: 'Chris Lee',
     team: 'Team Noona',
-    points: [],
     twoMakes: [0],
     twoAttempts: [0],
     ftMakes: [0],
@@ -878,7 +826,6 @@ export const players = [
   {
     name: 'Jay Won',
     team: 'Team Noona',
-    points: [],
     twoMakes: [1],
     twoAttempts: [3],
     ftMakes: [0],
@@ -890,7 +837,6 @@ export const players = [
   {
     name: 'Jinnyi Pak',
     team: 'Team Noona',
-    points: [],
     twoMakes: [null],
     twoAttempts: [null],
     ftMakes: [null],
@@ -902,7 +848,6 @@ export const players = [
   {
     name: 'Justin Chung',
     team: 'Team Noona',
-    points: [],
     twoMakes: [1],
     twoAttempts: [2],
     ftMakes: [3],
@@ -914,7 +859,6 @@ export const players = [
   {
     name: 'Matthew Toma',
     team: 'Team Noona',
-    points: [],
     twoMakes: [1],
     twoAttempts: [3],
     ftMakes: [0],
@@ -926,7 +870,6 @@ export const players = [
   {
     name: 'Michael Ruan',
     team: 'Team Noona',
-    points: [],
     twoMakes: [0],
     twoAttempts: [1],
     ftMakes: [1],
@@ -938,7 +881,6 @@ export const players = [
   {
     name: 'Paul Ko',
     team: 'Team Noona',
-    points: [],
     twoMakes: [2],
     twoAttempts: [4],
     ftMakes: [0],
@@ -950,7 +892,6 @@ export const players = [
   {
     name: 'Tae Kim',
     team: 'Team Noona',
-    points: [],
     twoMakes: [2],
     twoAttempts: [6],
     ftMakes: [0],
@@ -961,8 +902,7 @@ export const players = [
   },
   {
     name: 'Robin Choi',
-    team: 'Robin\'s Hood',
-    points: [],
+    team: "Robin's Hood",
     twoMakes: [0],
     twoAttempts: [2],
     ftMakes: [0],
@@ -973,8 +913,7 @@ export const players = [
   },
   {
     name: 'Brandon Wang',
-    team: 'Robin\'s Hood',
-    points: [],
+    team: "Robin's Hood",
     twoMakes: [0],
     twoAttempts: [4],
     ftMakes: [0],
@@ -985,8 +924,7 @@ export const players = [
   },
   {
     name: 'Jamie Chang',
-    team: 'Robin\'s Hood',
-    points: [],
+    team: "Robin's Hood",
     twoMakes: [0],
     twoAttempts: [7],
     ftMakes: [0],
@@ -997,8 +935,7 @@ export const players = [
   },
   {
     name: 'Jonathan Mo',
-    team: 'Robin\'s Hood',
-    points: [],
+    team: "Robin's Hood",
     twoMakes: [0],
     twoAttempts: [0],
     ftMakes: [0],
@@ -1009,8 +946,7 @@ export const players = [
   },
   {
     name: 'Josh Nash',
-    team: 'Robin\'s Hood',
-    points: [],
+    team: "Robin's Hood",
     twoMakes: [0],
     twoAttempts: [0],
     ftMakes: [0],
@@ -1021,8 +957,7 @@ export const players = [
   },
   {
     name: 'Matthew Ikeda',
-    team: 'Robin\'s Hood',
-    points: [],
+    team: "Robin's Hood",
     twoMakes: [1],
     twoAttempts: [1],
     ftMakes: [0],
@@ -1033,8 +968,7 @@ export const players = [
   },
   {
     name: 'Patrick Suh',
-    team: 'Robin\'s Hood',
-    points: [],
+    team: "Robin's Hood",
     twoMakes: [5],
     twoAttempts: [11],
     ftMakes: [0],
@@ -1045,8 +979,7 @@ export const players = [
   },
   {
     name: 'Peter Bae',
-    team: 'Robin\'s Hood',
-    points: [],
+    team: "Robin's Hood",
     twoMakes: [null],
     twoAttempts: [null],
     ftMakes: [null],
@@ -1057,8 +990,7 @@ export const players = [
   },
   {
     name: 'Richard Yoon',
-    team: 'Robin\'s Hood',
-    points: [],
+    team: "Robin's Hood",
     twoMakes: [2],
     twoAttempts: [2],
     ftMakes: [0],
@@ -1069,8 +1001,7 @@ export const players = [
   },
   {
     name: 'Zion No',
-    team: 'Robin\'s Hood',
-    points: [],
+    team: "Robin's Hood",
     twoMakes: [3],
     twoAttempts: [9],
     ftMakes: [0],
@@ -1082,7 +1013,6 @@ export const players = [
   {
     name: 'Timothy Chiu',
     team: 'Kick Your Boaz',
-    points: [],
     twoMakes: [null],
     twoAttempts: [null],
     ftMakes: [null],
@@ -1094,7 +1024,6 @@ export const players = [
   {
     name: 'Andrew Lee',
     team: 'Kick Your Boaz',
-    points: [],
     twoMakes: [null],
     twoAttempts: [null],
     ftMakes: [null],
@@ -1106,7 +1035,6 @@ export const players = [
   {
     name: 'Chris Kim',
     team: 'Kick Your Boaz',
-    points: [],
     twoMakes: [null],
     twoAttempts: [null],
     ftMakes: [null],
@@ -1118,7 +1046,6 @@ export const players = [
   {
     name: 'Elliot Kim',
     team: 'Kick Your Boaz',
-    points: [],
     twoMakes: [null],
     twoAttempts: [null],
     ftMakes: [null],
@@ -1130,7 +1057,6 @@ export const players = [
   {
     name: 'Jason Lee',
     team: 'Kick Your Boaz',
-    points: [],
     twoMakes: [null],
     twoAttempts: [null],
     ftMakes: [null],
@@ -1142,7 +1068,6 @@ export const players = [
   {
     name: 'Jonathan Cui',
     team: 'Kick Your Boaz',
-    points: [],
     twoMakes: [null],
     twoAttempts: [null],
     ftMakes: [null],
@@ -1154,7 +1079,6 @@ export const players = [
   {
     name: 'Josiah Bezet',
     team: 'Kick Your Boaz',
-    points: [],
     twoMakes: [null],
     twoAttempts: [null],
     ftMakes: [null],
@@ -1166,7 +1090,6 @@ export const players = [
   {
     name: 'Michael Tay',
     team: 'Kick Your Boaz',
-    points: [],
     twoMakes: [null],
     twoAttempts: [null],
     ftMakes: [null],
@@ -1178,7 +1101,6 @@ export const players = [
   {
     name: 'Ryan Chow',
     team: 'Kick Your Boaz',
-    points: [],
     twoMakes: [null],
     twoAttempts: [null],
     ftMakes: [null],
@@ -1190,7 +1112,6 @@ export const players = [
   {
     name: 'Stephen Han',
     team: 'Kick Your Boaz',
-    points: [],
     twoMakes: [null],
     twoAttempts: [null],
     ftMakes: [null],
