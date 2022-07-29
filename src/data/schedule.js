@@ -1,5 +1,4 @@
 export const schedule = [
-
   // Week 1
   {
     homeTeam: 'Better Call Gasol',
@@ -10,7 +9,7 @@ export const schedule = [
     week: 1
   },
   {
-    homeTeam: 'Robin\'s Hood',
+    homeTeam: "Robin's Hood",
     awayTeam: 'Goon Squad',
     homeScore: 34,
     awayScore: 38,
@@ -36,7 +35,7 @@ export const schedule = [
 
   // Week 2
   {
-    homeTeam: 'Robin\'s Hood',
+    homeTeam: "Robin's Hood",
     awayTeam: 'J-Walkers',
     homeScore: null,
     awayScore: null,
@@ -95,7 +94,7 @@ export const schedule = [
   },
   {
     homeTeam: 'Victorious Secret',
-    awayTeam: 'Robin\'s Hood',
+    awayTeam: "Robin's Hood",
     homeScore: null,
     awayScore: null,
     time: '6:00PM',
@@ -147,7 +146,7 @@ export const schedule = [
   },
   {
     homeTeam: 'Team Noona',
-    awayTeam: 'Robin\'s Hood',
+    awayTeam: "Robin's Hood",
     homeScore: null,
     awayScore: null,
     time: '4:10PM',
@@ -173,7 +172,7 @@ export const schedule = [
   // Week 6
   {
     homeTeam: 'Kick Your Boaz',
-    awayTeam: 'Robin\'s Hood',
+    awayTeam: "Robin's Hood",
     homeScore: null,
     awayScore: null,
     time: '3:15PM',
@@ -206,35 +205,35 @@ export const schedule = [
 
   // Week 7
   {
-      homeTeam: 'J-Walkers',
-      awayTeam: 'Run JHC',
-      homeScore: null,
-      awayScore: null,
-      time: '3:15PM',
-      week: 7
+    homeTeam: 'J-Walkers',
+    awayTeam: 'Run JHC',
+    homeScore: null,
+    awayScore: null,
+    time: '3:15PM',
+    week: 7
   },
   {
-      homeTeam: 'Victorious Secret',
-      awayTeam: 'Team Noona',
-      homeScore: null,
-      awayScore: null,
-      time: '4:10PM',
-      week: 7
-    },
-    {
-      homeTeam: 'Kick Your Boaz',
-      awayTeam: 'Crossovers For Christ',
-      homeScore: null,
-      awayScore: null,
-      time: '5:05PM',
-      week: 7
-    },
-    {
-      homeTeam: 'Better Call Gasol',
-      awayTeam: 'ABG (Anointed By God)',
-      homeScore: null,
-      awayScore: null,
-      time: '6:00PM',
-      week: 7
-    }
-]
+    homeTeam: 'Victorious Secret',
+    awayTeam: 'Team Noona',
+    homeScore: null,
+    awayScore: null,
+    time: '4:10PM',
+    week: 7
+  },
+  {
+    homeTeam: 'Kick Your Boaz',
+    awayTeam: 'Crossovers For Christ',
+    homeScore: null,
+    awayScore: null,
+    time: '5:05PM',
+    week: 7
+  },
+  {
+    homeTeam: 'Better Call Gasol',
+    awayTeam: 'ABG (Anointed By God)',
+    homeScore: null,
+    awayScore: null,
+    time: '6:00PM',
+    week: 7
+  }
+];

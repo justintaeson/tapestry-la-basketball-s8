@@ -1,5 +1,5 @@
 body {
-  font-family: "Bebas Neue", cursive;
+  font-family: 'Bebas Neue', cursive;
 }
 
 #header {
@@ -25,11 +25,48 @@ body {
   padding: 1rem;
 }
 
-.box {
-  border: black solid 1px;
+.box,
+.teams-box {
+  border: black solid 2px;
 }
 
 .home-score,
 .away-score {
   font-size: 3rem;
+}
+
+.teams-box:hover {
+  cursor: pointer;
+  background-color: blue;
+  color: white;
+}
+
+th {
+  background-color: gray;
+  font-size: 1rem;
+  color: white;
+}
+
+table {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 0.8rem;
+}
+
+.game-stats {
+  border-radius: 1rem;
+  border: 2px solid black;
+}
+
+.game-stats:hover,
+#home-button:hover,
+#away-button:hover {
+  cursor: pointer;
+  background-color: yellow;
+}
+
+#home-button,
+#away-button {
+  font-size: 1.5rem;
+  border-radius: 1rem;
+  border: 2px solid black;
 }
