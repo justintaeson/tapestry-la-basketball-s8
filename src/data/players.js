@@ -60,10 +60,9 @@ export function gamesPlayed(array) {
 
 export function formatStats(stat) {
   if (isNaN(stat)) {
-    return '--';
-  } else {
-    return stat.toFixed(2) + '%';
+    stat = 0;
   }
+  return stat.toFixed(2) + '%';
 }
 
 export function getTeamStats(team) {
@@ -814,7 +813,7 @@ export const players = [
     twoAttempts: [7, null, 2],
     ftMakes: [1, null, 0],
     ftAttempts: [5, null, 0],
-    threeMakes: [0, null, 1],
+    threeMakes: [0, null, 0],
     threeAttempts: [3, null, 0],
     image: null
   },
@@ -1208,7 +1207,7 @@ export const players = [
     points: [null, 0, 0],
     twoMakes: [null, 0, 0],
     twoAttempts: [null, 1, 0],
-    ftMakes: [null, 0],
+    ftMakes: [null, 0, 0],
     ftAttempts: [null, 0, 0],
     threeMakes: [null, 0, 0],
     threeAttempts: [null, 0, 2],
