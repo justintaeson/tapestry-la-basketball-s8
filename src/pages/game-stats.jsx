@@ -54,8 +54,6 @@ export class GameStats extends React.Component {
             <td>--</td>
             <td>--</td>
             <td>--</td>
-            <td>--</td>
-            <td>--</td>
           </tr>
           );
         }
@@ -71,11 +69,9 @@ export class GameStats extends React.Component {
         return (
         <tr key={player.name}>
           <td>{player.name}</td>
-          <td>{player.twoMakes[this.props.state.week - 1] + ' / ' + player.twoAttempts[this.props.state.week - 1]}</td>
-          <td>{formatStats(player, player.twoMakes, player.twoAttempts)}</td>
-          <td>{player.threeMakes[this.props.state.week - 1] + ' / ' + player.threeAttempts[this.props.state.week - 1]}</td>
+          <td>{player.threeMakes[this.props.state.week - 1] + '/' + player.threeAttempts[this.props.state.week - 1]}</td>
           <td>{formatStats(player, player.threeMakes, player.threeAttempts)}</td>
-          <td>{player.ftMakes[this.props.state.week - 1] + ' / ' + player.ftAttempts[this.props.state.week - 1]}</td>
+          <td>{player.ftMakes[this.props.state.week - 1] + '/' + player.ftAttempts[this.props.state.week - 1]}</td>
           <td>{formatStats(player, player.ftMakes, player.ftAttempts)}</td>
           <td>{player.twoMakes[this.props.state.week - 1] + player.threeMakes[this.props.state.week - 1] + '/' + (player.twoAttempts[this.props.state.week - 1] + player.threeAttempts[this.props.state.week - 1])}</td>
           <td>{((player.twoMakes[this.props.state.week - 1] + player.threeMakes[this.props.state.week - 1]) / (player.twoAttempts[this.props.state.week - 1] + player.threeAttempts[this.props.state.week - 1]) * 100).toFixed(2) + '%'}</td>
@@ -101,16 +97,14 @@ export class GameStats extends React.Component {
         <table>
           <tbody>
             <tr>
-              <th className="stat-heading">Player</th>
-              <th className="stat-heading">2PT</th>
-              <th className="stat-heading">2PT FG% </th>
+              <th className="stat-heading">PLAYER</th>
               <th className="stat-heading">3PT</th>
-              <th className="stat-heading">3PT FG%</th>
+              <th className="stat-heading">3PT%</th>
               <th className="stat-heading">FT</th>
               <th className="stat-heading">FT%</th>
               <th className="stat-heading">FG</th>
               <th className="stat-heading">FG%</th>
-              <th className="stat-heading">Points</th>
+              <th className="stat-heading">PTS</th>
             </tr>
             {gameStats}
           </tbody>
