@@ -34,30 +34,30 @@ export default class TeamStats extends React.Component {
     });
 
     return (
-        <>
-          <div className="row">
-            <h1 className='stats-header'>Team Stats</h1>
-          </div>
-          <table>
-            <tbody>
-              <tr>
-                <th>Team</th>
-                <th>Games Played</th>
-                <th>Points Scored</th>
-                <th>Points Allowed</th>
-                <th>FG</th>
-                <th>FG%</th>
-                <th>2PT</th>
-                <th>2PT FG% </th>
-                <th>3PT</th>
-                <th>3PT FG%</th>
-                <th>FT</th>
-                <th>FT%</th>
-              </tr>
-              {tableContent}
-            </tbody>
-          </table>
-        </>
+      <>
+        <div className="row">
+          <h1 className="stats-header">Team Stats</h1>
+        </div>
+        <table>
+          <tbody>
+            <tr>
+              <th className="stat-heading">Team</th>
+              <th className="stat-heading">Games Played</th>
+              <th className="stat-heading">Points Scored</th>
+              <th className="stat-heading">Points Allowed</th>
+              <th className="stat-heading">FG</th>
+              <th className="stat-heading">FG%</th>
+              <th className="stat-heading">2PT</th>
+              <th className="stat-heading">2PT FG% </th>
+              <th className="stat-heading">3PT</th>
+              <th className="stat-heading">3PT FG%</th>
+              <th className="stat-heading">FT</th>
+              <th className="stat-heading">FT%</th>
+            </tr>
+            {tableContent}
+          </tbody>
+        </table>
+      </>
     );
   }
 }

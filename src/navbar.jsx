@@ -43,10 +43,10 @@ export default class NavBar extends React.Component {
     return (
       <header id="header">
         <div id="header-row" className="row">
-          <div className="column-one-half align-center">
+          <div className="column-one-fourth align-center">
             <img id="logo" src={TapestryLALogo} alt="TapestryLA-logo" />
           </div>
-          <div className="column-one-half align-center justify-end">
+          <div className="column-three-fourths align-center justify-end">
             <a href="/#" id="home" className="header-links flex-nowrap" onClick={this.handleClick}>
               Home
             </a>

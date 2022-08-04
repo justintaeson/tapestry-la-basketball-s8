@@ -63,20 +63,20 @@ export default class Teams extends React.Component {
       return teams;
     } else {
       return (
-        <table className='teams-table'>
+        <table className="teams-table">
           <tbody>
             <tr>
-              <th>Player</th>
-              <th>Games</th>
-              <th>2PT</th>
-              <th>2PT FG% </th>
-              <th>3PT</th>
-              <th>3PT FG%</th>
-              <th>FT</th>
-              <th>FT%</th>
-              <th>FG</th>
-              <th>FG%</th>
-              <th>PPG</th>
+              <th className="stat-heading">Player</th>
+              <th className="stat-heading">Games</th>
+              <th className="stat-heading">2PT</th>
+              <th className="stat-heading">2PT FG% </th>
+              <th className="stat-heading">3PT</th>
+              <th className="stat-heading">3PT FG%</th>
+              <th className="stat-heading">FT</th>
+              <th className="stat-heading">FT%</th>
+              <th className="stat-heading">FG</th>
+              <th className="stat-heading">FG%</th>
+              <th className="stat-heading">PPG</th>
             </tr>
             {playersData}
           </tbody>
