@@ -12,12 +12,12 @@ export default class Home extends React.Component {
           <h1 id="tapestry-la" className="home-text">
             Tapestry LA
           </h1>
-          <h2 id="basketball-league" className="home-text">
+          <h1 id="basketball-league" className="home-text">
             Basketball League
-          </h2>
-          <h3 id="season-8" className="home-text">
+          </h1>
+          <h1 id="season-8" className="home-text">
             Season 8
-          </h3>
+          </h1>
         </div>
       </main>
     );

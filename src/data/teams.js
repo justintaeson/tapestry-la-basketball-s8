@@ -18,22 +18,17 @@ export function getTotalPoints(team) {
   return points;
 }
 
-export function getTotalPointsAllowed(team) {
-  let points = 0;
-  for (let i = 0; i < schedule.length; i++) {
-    if (team === schedule[i].homeTeam) {
-      if (schedule[i].awayScore === '--') {
-        continue;
-      }
-      points += schedule[i].awayScore;
-    } else if (team === schedule[i].awayTeam) {
-      if (schedule[i].homeScore === '--') {
-        continue;
-      }
-      points += schedule[i].homeScore;
+export function getWins(team) {
+  let winCounter = 0;
+  schedule.map(game => {
+    if (team === game.homeTeam && game.homeScore > game.awayScore) {
+      winCounter++;
+    } else if (team === game.awayTeam && game.awayScore > game.homeScore) {
+      winCounter++;
     }
-  }
-  return points;
+    return null;
+  });
+  return winCounter;
 }
 
 export function getGamesPlayed(team) {

@@ -64,20 +64,18 @@ export default class PlayerStats extends React.Component {
         <table className="justify-center">
           <tbody>
             <tr>
-              <th>Rank</th>
-              <th>Player</th>
-              <th>PPG</th>
-              <th>FG%</th>
-              <th>2PT%</th>
-              <th>3PT%</th>
-              <th>FT%</th>
+              <th className="player-stats-header">RANK</th>
+              <th className="player-stats-header">PLAYER</th>
+              <th className="player-stats-header">PTS</th>
+              <th className="player-stats-header">FG%</th>
+              <th className="player-stats-header">2P%</th>
+              <th className="player-stats-header">3P%</th>
+              <th className="player-stats-header">FT%</th>
             </tr>
             {tableContent}
           </tbody>
         </table>
-        <div className="row justify-center">
-          {statFilter()}
-        </div>
+        <div className="row justify-center">{statFilter()}</div>
       </>
     );
   }
