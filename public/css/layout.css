@@ -32,6 +32,18 @@ body {
   flex-direction: column;
 }
 
+.column-one-fourth {
+  display:flex;
+  width: 25%;
+  margin: auto;
+}
+
+.column-three-fourths {
+  display:flex;
+  width: 75%;
+  margin: auto;
+}
+
 .justify-center {
   justify-content: center;
 }
@@ -46,7 +58,7 @@ body {
 
 #logo {
   height: 3rem;
-  padding-left: 3rem;
+  margin-left: 2rem;
 }
 
 .justify-end {
@@ -84,7 +96,7 @@ body {
   width: 50%;
   display: flex;
   margin: 2rem;
-  padding: 1rem;
+  padding: 2rem 4rem;
 }
 
 .schedule-row {
@@ -198,4 +210,25 @@ td {
 .stat-filter {
   padding: 0 0.5rem;
   margin: 2rem 0
+}
+
+@media screen and (max-width: 768px) {
+  .column-one-half {
+    max-width: 50%;
+  }
+
+  th,
+  td{
+    padding: 0.5rem
+  }
+
+  .stat-heading,
+  td {
+    font-size: 0.5rem;
+  }
+
+  .header-links{
+    padding: 0 1rem;
+    width: 100%;
+  }
 }

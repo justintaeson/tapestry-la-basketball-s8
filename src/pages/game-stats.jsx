@@ -86,31 +86,36 @@ export class GameStats extends React.Component {
     return (
       <>
         <div className="row">
-          <div id="home-button-container" className='column-one-half'>
-            <p id="home-button" className={this.state.homeClass} onClick={this.handleClick}>Home</p>
+          <div id="home-button-container" className="column-one-half">
+            <p id="home-button" className={this.state.homeClass} onClick={this.handleClick}>
+              Home
+            </p>
           </div>
-          <div id="away-button-container" className='column-one-half'>
-            <p id="away-button" className={this.state.awayClass} onClick={this.handleClick}>Away</p>
+          <div id="away-button-container" className="column-one-half">
+            <p id="away-button" className={this.state.awayClass} onClick={this.handleClick}>
+              Away
+            </p>
           </div>
         </div>
 
         <table>
           <tbody>
             <tr>
-              <th>Player</th>
-              <th>2PT</th>
-              <th>2PT FG% </th>
-              <th>3PT</th>
-              <th>3PT FG%</th>
-              <th>FT</th>
-              <th>FT%</th>
-              <th>FG</th>
-              <th>FG%</th>
-              <th>Points</th>
+              <th className="stat-heading">Player</th>
+              <th className="stat-heading">2PT</th>
+              <th className="stat-heading">2PT FG% </th>
+              <th className="stat-heading">3PT</th>
+              <th className="stat-heading">3PT FG%</th>
+              <th className="stat-heading">FT</th>
+              <th className="stat-heading">FT%</th>
+              <th className="stat-heading">FG</th>
+              <th className="stat-heading">FG%</th>
+              <th className="stat-heading">Points</th>
             </tr>
             {gameStats}
           </tbody>
         </table>
-      </>);
+      </>
+    );
   }
 }
