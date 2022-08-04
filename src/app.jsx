@@ -3,6 +3,7 @@ import Home from './pages/home';
 import NavBar from './navbar';
 import Schedule from './pages/schedule';
 import Teams from './pages/teams';
+import Stats from './pages/stats';
 
 export default class App extends React.Component {
   componentDidMount() {
@@ -42,6 +43,14 @@ export default class App extends React.Component {
         <>
           <NavBar />
           <Teams />
+        </>
+      );
+    }
+    if (window.location.hash === '#stats') {
+      return (
+        <>
+          <NavBar />
+          <Stats />
         </>
       );
     }

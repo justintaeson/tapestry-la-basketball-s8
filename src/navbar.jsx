@@ -11,9 +11,6 @@ export default class NavBar extends React.Component {
   }
 
   handleClick(event) {
-
-    // eslint-disable-next-line
-    console.log(window.location.hash);
     if (window.location.hash === '#' + event.target.id) {
       location.reload();
     }
@@ -25,6 +22,9 @@ export default class NavBar extends React.Component {
     }
     if (event.target.id === 'teams') {
       window.location.hash = 'teams';
+    }
+    if (event.target.id === 'stats') {
+      window.location.hash = 'stats';
     }
   }
 

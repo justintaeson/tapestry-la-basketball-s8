@@ -25,6 +25,13 @@ body {
   margin: 0;
 }
 
+.column-one-third {
+  display: flex;
+  width: 33.33%;
+  margin: 0;
+  flex-direction: column;
+}
+
 .justify-center {
   justify-content: center;
 }
@@ -52,8 +59,8 @@ body {
 }
 
 #about-video {
-  object-fit: fill;
-  width: 100vw;
+  object-fit:cover;
+  width: 100vw
 }
 
 .home-text {
@@ -145,9 +152,50 @@ td {
 
 #home-button,
 #away-button {
-  padding: 0.5rem 2rem;
+  padding: 0.5rem 2rem
 }
 
 .teams-table{
   margin-top: 2rem;
+}
+
+.stat-type {
+  display: flex;
+  justify-content: center;
+}
+
+.stats-container {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#stat-type-team,
+#stat-type-player {
+  padding: 1rem 0
+}
+
+#home-button-container {
+  justify-content: right;
+  margin-right: 1rem;
+}
+
+#away-button-container {
+  justify-content: left;
+  margin-left: 1rem
+}
+
+.stats-header{
+  margin: auto;
+  padding: 2rem 0
+}
+
+.player-stat-header {
+  text-align: center;
+}
+
+.stat-filter {
+  padding: 0 0.5rem;
+  margin: 2rem 0
 }
