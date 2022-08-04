@@ -39,7 +39,7 @@ export default class TeamStats extends React.Component {
         <table>
           <tbody>
             <tr>
-              <th className="stat-heading">Team</th>
+              <th className="stat-heading">TEAM</th>
               <th className="stat-heading">GP</th>
               <th className="stat-heading">W</th>
               <th className="stat-heading">PTS</th>

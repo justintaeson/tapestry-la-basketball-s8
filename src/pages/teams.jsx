@@ -43,13 +43,11 @@ export default class Teams extends React.Component {
           <tr key={player.name}>
             <td>{player.name}</td>
             <td>{gamesPlayed(player.twoMakes)}</td>
-            <td>{getSum(player.twoMakes).toFixed(1) + '/' + getSum(player.twoAttempts).toFixed(1)}</td>
-            <td>{formatStats(getSum(player.twoMakes) / getSum(player.twoAttempts) * 100)}</td>
-            <td>{getSum(player.threeMakes).toFixed(1) + '/' + getSum(player.threeAttempts).toFixed(1)}</td>
+            <td>{getSum(player.threeMakes) + '/' + getSum(player.threeAttempts)}</td>
             <td>{formatStats(getSum(player.threeMakes) / getSum(player.threeAttempts) * 100)}</td>
-            <td>{getSum(player.ftMakes).toFixed(1) + '/' + getSum(player.ftAttempts).toFixed(1)}</td>
+            <td>{getSum(player.ftMakes) + '/' + getSum(player.ftAttempts)}</td>
             <td>{formatStats(getSum(player.ftMakes) / getSum(player.ftAttempts) * 100)}</td>
-            <td>{(getSum(player.twoMakes) + getSum(player.threeMakes)).toFixed(1) + '/' + (getSum(player.twoAttempts) + getSum(player.threeAttempts)).toFixed(1)}</td>
+            <td>{(getSum(player.twoMakes) + getSum(player.threeMakes)) + '/' + (getSum(player.twoAttempts) + getSum(player.threeAttempts))}</td>
             <td>{formatStats(((getSum(player.twoMakes) + getSum(player.threeMakes)) / (getSum(player.twoAttempts) + getSum(player.threeAttempts))) * 100)}</td>
             <td>{formatStats(getSum(player.points) / gamesPlayed(player.twoMakes)).slice(0, 4)}</td>
           </tr>
@@ -74,10 +72,8 @@ export default class Teams extends React.Component {
           <table className="teams-table">
             <tbody>
               <tr>
-                <th className="stat-heading">Player</th>
+                <th className="stat-heading">PLAYER</th>
                 <th className="stat-heading">GP</th>
-                <th className="stat-heading">2PT</th>
-                <th className="stat-heading">2PT% </th>
                 <th className="stat-heading">3PT</th>
                 <th className="stat-heading">3PT%</th>
                 <th className="stat-heading">FT</th>
