@@ -69,7 +69,7 @@ table {
 #home-button,
 #away-button {
   font-size: 1.5rem;
-  border-radius: 1rem;
+  border-radius: 5rem;
   border: 2px solid black;
 }
 
@@ -101,4 +101,24 @@ table {
 
 .underline {
   text-decoration: underline 2px;
+}
+
+@media screen and (max-width: 768px) {
+  .stats-header {
+    font-size: 16px;
+    padding: 1rem 0
+  }
+
+  .player-stats-header {
+    font-size: 10px
+  }
+
+  .stat-filter{
+    font-size: 1rem;
+  }
+
+  #home-button,
+  #away-button {
+    font-size: 1rem;
+  }
 }

@@ -60,18 +60,22 @@ export default class Teams extends React.Component {
     });
 
     if (this.state.team === null) {
-      return teams;
+      return (
+      <div className='team-container'>
+        {teams}
+      </div>
+      );
     } else {
       return (
         <table className="teams-table">
           <tbody>
             <tr>
               <th className="stat-heading">Player</th>
-              <th className="stat-heading">Games</th>
+              <th className="stat-heading">G</th>
               <th className="stat-heading">2PT</th>
-              <th className="stat-heading">2PT FG% </th>
+              <th className="stat-heading">2PT% </th>
               <th className="stat-heading">3PT</th>
-              <th className="stat-heading">3PT FG%</th>
+              <th className="stat-heading">3PT%</th>
               <th className="stat-heading">FT</th>
               <th className="stat-heading">FT%</th>
               <th className="stat-heading">FG</th>

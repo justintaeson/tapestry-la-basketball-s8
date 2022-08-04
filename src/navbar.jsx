@@ -81,7 +81,7 @@ export default class NavBar extends React.Component {
               target="_blank"
               rel="noreferrer"
             >
-              Tapestry LA
+              Tap LA
             </a>
           </div>
         </div>
