@@ -5,15 +5,27 @@ export class GameStats extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      page: 'Home'
+      page: 'Home',
+      homeClass: 'yellow',
+      awayClass: ''
     };
     this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick(event) {
-    this.setState({
-      page: event.target.innerText
-    });
+    if (event.target.innerText === 'Home') {
+      this.setState({
+        page: event.target.innerText,
+        homeClass: 'yellow',
+        awayClass: ''
+      });
+    } else if (event.target.innerText === 'Away') {
+      this.setState({
+        page: event.target.innerText,
+        homeClass: '',
+        awayClass: 'yellow'
+      });
+    }
   }
 
   render() {
@@ -50,7 +62,7 @@ export class GameStats extends React.Component {
 
         const formatStats = (player, makes, attempts) => {
           if (attempts[this.props.state.week - 1] === 0) {
-            return '--';
+            return '0.00%';
           } else {
             return ((makes[this.props.state.week - 1] / attempts[this.props.state.week - 1] * 100).toFixed(2) + '%');
           }
@@ -61,45 +73,44 @@ export class GameStats extends React.Component {
           <td>{player.name}</td>
           <td>{player.twoMakes[this.props.state.week - 1] + ' / ' + player.twoAttempts[this.props.state.week - 1]}</td>
           <td>{formatStats(player, player.twoMakes, player.twoAttempts)}</td>
-          <td>{player.threeMakes[this.props.state.week - 1] + '/' + player.threeAttempts[this.props.state.week - 1]}</td>
+          <td>{player.threeMakes[this.props.state.week - 1] + ' / ' + player.threeAttempts[this.props.state.week - 1]}</td>
           <td>{formatStats(player, player.threeMakes, player.threeAttempts)}</td>
-          <td>{player.ftMakes[this.props.state.week - 1] + '/' + player.ftAttempts[this.props.state.week - 1]}</td>
+          <td>{player.ftMakes[this.props.state.week - 1] + ' / ' + player.ftAttempts[this.props.state.week - 1]}</td>
           <td>{formatStats(player, player.ftMakes, player.ftAttempts)}</td>
           <td>{player.twoMakes[this.props.state.week - 1] + player.threeMakes[this.props.state.week - 1] + '/' + (player.twoAttempts[this.props.state.week - 1] + player.threeAttempts[this.props.state.week - 1])}</td>
           <td>{((player.twoMakes[this.props.state.week - 1] + player.threeMakes[this.props.state.week - 1]) / (player.twoAttempts[this.props.state.week - 1] + player.threeAttempts[this.props.state.week - 1]) * 100).toFixed(2) + '%'}</td>
-          <td>{(player.twoMakes[this.props.state.week - 1] * 2) + (player.threeMakes[this.props.state.week - 1] * 3)}</td>
+          <td>{(player.twoMakes[this.props.state.week - 1] * 2) + (player.threeMakes[this.props.state.week - 1] * 3) + (player.ftMakes[this.props.state.week - 1])}</td>
         </tr>);
       } else return null;
     });
     return (
-        <>
-          <div className="row">
-            <div className="column-one-half justify-center">
-              <p id="home-button" onClick={this.handleClick}>Home</p>
-            </div>
-            <div className="column-one-half home-away justify-center">
-              <p id="away-button" onClick={this.handleClick}>Away</p>
-            </div>
+      <>
+        <div className="row">
+          <div id="home-button-container" className='column-one-half'>
+            <p id="home-button" className={this.state.homeClass} onClick={this.handleClick}>Home</p>
           </div>
+          <div id="away-button-container" className='column-one-half'>
+            <p id="away-button" className={this.state.awayClass} onClick={this.handleClick}>Away</p>
+          </div>
+        </div>
 
-          <table>
-            <tbody>
-              <tr>
-                <th>Player</th>
-                <th>2PT</th>
-                <th>2PT FG% </th>
-                <th>3PT</th>
-                <th>3PT FG%</th>
-                <th>FT</th>
-                <th>FT%</th>
-                <th>FG</th>
-                <th>FG%</th>
-                <th>Points</th>
-              </tr>
-              {gameStats}
-            </tbody>
-          </table>
-        </>
-    );
+        <table>
+          <tbody>
+            <tr>
+              <th>Player</th>
+              <th>2PT</th>
+              <th>2PT FG% </th>
+              <th>3PT</th>
+              <th>3PT FG%</th>
+              <th>FT</th>
+              <th>FT%</th>
+              <th>FG</th>
+              <th>FG%</th>
+              <th>Points</th>
+            </tr>
+            {gameStats}
+          </tbody>
+        </table>
+      </>);
   }
 }

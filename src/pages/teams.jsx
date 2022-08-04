@@ -1,5 +1,6 @@
 import React from 'react';
-import { players as PlayersData, getAverage } from '../data/players';
+import { players as PlayersData, getSum, gamesPlayed, formatStats } from '../data/players';
+import { teams as TeamsData } from '../data/teams';
 
 export default class Teams extends React.Component {
   constructor(props) {
@@ -12,7 +13,6 @@ export default class Teams extends React.Component {
 
   handleClick(event) {
     if (event.target.childNodes[0].data) {
-
       this.setState({
         team: event.target.childNodes[0].data
       });
@@ -27,16 +27,14 @@ export default class Teams extends React.Component {
   }
 
   render() {
-    const teams = PlayersData.map(player => {
-      if (PlayersData.indexOf(player) % 10 === 0) {
-        return (
-          <div key={player.team} className="teams-row justify-center" onClick={this.handleClick}>
+    const teams = TeamsData.map(team => {
+      return (
+          <div key={team.team} className="teams-row justify-center" onClick={this.handleClick}>
             <div className="teams-box">
-              <div className="row justify-center">{player.team}</div>
+              <div className="row justify-center">{team.team}</div>
             </div>
           </div>
-        );
-      } else return null;
+      );
     });
 
     const playersData = PlayersData.map(player => {
@@ -44,49 +42,16 @@ export default class Teams extends React.Component {
         return (
           <tr key={player.name}>
             <td>{player.name}</td>
-            <td>
-              {getAverage(player.twoMakes).toFixed(1) +
-                ' / ' +
-                getAverage(player.twoAttempts).toFixed(1)}
-            </td>
-            <td>
-              {((getAverage(player.twoMakes) / getAverage(player.twoAttempts)) * 100).toFixed(2) +
-                '%'}
-            </td>
-            <td>
-              {getAverage(player.threeMakes).toFixed(1) +
-                ' / ' +
-                getAverage(player.threeAttempts).toFixed(1)}
-            </td>
-            <td>
-              {((getAverage(player.threeMakes) / getAverage(player.threeAttempts)) * 100).toFixed(
-                2
-              ) + '%'}
-            </td>
-            <td>
-              {getAverage(player.ftMakes).toFixed(1) +
-                ' / ' +
-                getAverage(player.ftAttempts).toFixed(1)}
-            </td>
-            <td>
-              {((getAverage(player.ftMakes) / getAverage(player.ftAttempts)) * 100).toFixed(2) +
-                '%'}
-            </td>
-            <td>
-              {(getAverage(player.twoMakes) + getAverage(player.threeMakes)).toFixed(1) +
-                ' / ' +
-                (getAverage(player.twoAttempts) + getAverage(player.threeAttempts)).toFixed(1)}
-            </td>
-            <td>
-              {(
-                ((getAverage(player.twoMakes) + getAverage(player.threeMakes)) /
-                  (getAverage(player.twoAttempts) + getAverage(player.threeAttempts))) *
-                100
-              ).toFixed(2) + '%'}
-            </td>
-            <td>
-              {(getAverage(player.twoMakes) * 2 + getAverage(player.threeMakes) * 3).toFixed(1)}
-            </td>
+            <td>{gamesPlayed(player.twoMakes)}</td>
+            <td>{getSum(player.twoMakes).toFixed(1) + ' / ' + getSum(player.twoAttempts).toFixed(1)}</td>
+            <td>{formatStats(getSum(player.twoMakes) / getSum(player.twoAttempts) * 100)}</td>
+            <td>{getSum(player.threeMakes).toFixed(1) + ' / ' + getSum(player.threeAttempts).toFixed(1)}</td>
+            <td>{formatStats(getSum(player.threeMakes) / getSum(player.threeAttempts) * 100)}</td>
+            <td>{getSum(player.ftMakes).toFixed(1) + ' / ' + getSum(player.ftAttempts).toFixed(1)}</td>
+            <td>{formatStats(getSum(player.ftMakes) / getSum(player.ftAttempts) * 100)}</td>
+            <td>{(getSum(player.twoMakes) + getSum(player.threeMakes)).toFixed(1) + ' / ' + (getSum(player.twoAttempts) + getSum(player.threeAttempts)).toFixed(1)}</td>
+            <td>{formatStats(((getSum(player.twoMakes) + getSum(player.threeMakes)) / (getSum(player.twoAttempts) + getSum(player.threeAttempts))) * 100)}</td>
+            <td>{formatStats(getSum(player.points) / gamesPlayed(player.twoMakes)).slice(0, 4)}</td>
           </tr>
         );
       } else {
@@ -102,6 +67,7 @@ export default class Teams extends React.Component {
           <tbody>
             <tr>
               <th>Player</th>
+              <th>Games</th>
               <th>2PT</th>
               <th>2PT FG% </th>
               <th>3PT</th>

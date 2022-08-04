@@ -18,7 +18,7 @@ export const schedule = [
   },
   {
     homeTeam: 'Run JHC',
-    awayTeam: 'ABG (Anointed By God)',
+    awayTeam: 'ABG (Anointed by God)',
     homeScore: 41,
     awayScore: 34,
     time: '5:05PM',
@@ -37,66 +37,66 @@ export const schedule = [
   {
     homeTeam: "Robin's Hood",
     awayTeam: 'J-Walkers',
-    homeScore: null,
-    awayScore: null,
+    homeScore: 56,
+    awayScore: 42,
     time: '3:15PM',
     week: 2
   },
   {
-    homeTeam: 'ABG (Anointed By God)',
+    homeTeam: 'ABG (Anointed by God)',
     awayTeam: 'Crossovers For Christ',
-    homeScore: null,
-    awayScore: null,
+    homeScore: 48,
+    awayScore: 28,
     time: '4:10PM',
     week: 2
   },
   {
     homeTeam: 'Victorious Secret',
     awayTeam: 'Run JHC',
-    homeScore: null,
-    awayScore: null,
+    homeScore: 41,
+    awayScore: 53,
     time: '5:05PM',
     week: 2
   },
   {
     homeTeam: 'Team Noona',
     awayTeam: 'Kick Your Boaz',
-    homeScore: null,
-    awayScore: null,
+    homeScore: 30,
+    awayScore: 36,
     time: '6:00PM',
     week: 2
   },
 
   // Week 3
   {
-    homeTeam: 'ABG (Anointed By God)',
+    homeTeam: 'ABG (Anointed by God)',
     awayTeam: 'Goon Squad',
-    homeScore: null,
-    awayScore: null,
+    homeScore: 35,
+    awayScore: 21,
     time: '3:15PM',
     week: 3
   },
   {
     homeTeam: 'Kick Your Boaz',
     awayTeam: 'J-Walkers',
-    homeScore: null,
-    awayScore: null,
+    homeScore: 23,
+    awayScore: 45,
     time: '4:10PM',
     week: 3
   },
   {
     homeTeam: 'Run JHC',
     awayTeam: 'Better Call Gasol',
-    homeScore: null,
-    awayScore: null,
+    homeScore: 50,
+    awayScore: 38,
     time: '5:05PM',
     week: 3
   },
   {
     homeTeam: 'Victorious Secret',
     awayTeam: "Robin's Hood",
-    homeScore: null,
-    awayScore: null,
+    homeScore: 60,
+    awayScore: 54,
     time: '6:00PM',
     week: 3
   },
@@ -105,32 +105,32 @@ export const schedule = [
   {
     homeTeam: 'Crossovers For Christ',
     awayTeam: 'Goon Squad',
-    homeScore: null,
-    awayScore: null,
+    homeScore: 0,
+    awayScore: 0,
     time: '3:15PM',
     week: 4
   },
   {
     homeTeam: 'Kick Your Boaz',
     awayTeam: 'Victorious Secret',
-    homeScore: null,
-    awayScore: null,
+    homeScore: 0,
+    awayScore: 0,
     time: '4:10PM',
     week: 4
   },
   {
     homeTeam: 'J-Walkers',
-    awayTeam: 'ABG (Anointed By God)',
-    homeScore: null,
-    awayScore: null,
+    awayTeam: 'ABG (Anointed by God)',
+    homeScore: 0,
+    awayScore: 0,
     time: '5:05PM',
     week: 4
   },
   {
     homeTeam: 'Team Noona',
     awayTeam: 'Better Call Gasol',
-    homeScore: null,
-    awayScore: null,
+    homeScore: 0,
+    awayScore: 0,
     time: '6:00PM',
     week: 4
   },
@@ -139,32 +139,32 @@ export const schedule = [
   {
     homeTeam: 'Better Call Gasol',
     awayTeam: 'Kick Your Boaz',
-    homeScore: null,
-    awayScore: null,
+    homeScore: 0,
+    awayScore: 0,
     time: '3:15PM',
     week: 5
   },
   {
     homeTeam: 'Team Noona',
     awayTeam: "Robin's Hood",
-    homeScore: null,
-    awayScore: null,
+    homeScore: 0,
+    awayScore: 0,
     time: '4:10PM',
     week: 5
   },
   {
     homeTeam: 'Run JHC',
     awayTeam: 'Crossovers For Christ',
-    homeScore: null,
-    awayScore: null,
+    homeScore: 0,
+    awayScore: 0,
     time: '5:05PM',
     week: 5
   },
   {
     homeTeam: 'Goon Squad',
     awayTeam: 'J-Walkers',
-    homeScore: null,
-    awayScore: null,
+    homeScore: 0,
+    awayScore: 0,
     time: '6:00PM',
     week: 5
   },
@@ -173,32 +173,32 @@ export const schedule = [
   {
     homeTeam: 'Kick Your Boaz',
     awayTeam: "Robin's Hood",
-    homeScore: null,
-    awayScore: null,
+    homeScore: 0,
+    awayScore: 0,
     time: '3:15PM',
     week: 6
   },
   {
     homeTeam: 'Run JHC',
     awayTeam: 'Team Noona',
-    homeScore: null,
-    awayScore: null,
+    homeScore: 0,
+    awayScore: 0,
     time: '4:10PM',
     week: 6
   },
   {
     homeTeam: 'Crossovers For Christ',
     awayTeam: 'J-Walkers',
-    homeScore: null,
-    awayScore: null,
+    homeScore: 0,
+    awayScore: 0,
     time: '5:05PM',
     week: 6
   },
   {
     homeTeam: 'Goon Squad',
     awayTeam: 'Better Call Gasol',
-    homeScore: null,
-    awayScore: null,
+    homeScore: 0,
+    awayScore: 0,
     time: '6:00PM',
     week: 6
   },
@@ -207,32 +207,32 @@ export const schedule = [
   {
     homeTeam: 'J-Walkers',
     awayTeam: 'Run JHC',
-    homeScore: null,
-    awayScore: null,
+    homeScore: 0,
+    awayScore: 0,
     time: '3:15PM',
     week: 7
   },
   {
     homeTeam: 'Victorious Secret',
     awayTeam: 'Team Noona',
-    homeScore: null,
-    awayScore: null,
+    homeScore: 0,
+    awayScore: 0,
     time: '4:10PM',
     week: 7
   },
   {
     homeTeam: 'Kick Your Boaz',
     awayTeam: 'Crossovers For Christ',
-    homeScore: null,
-    awayScore: null,
+    homeScore: 0,
+    awayScore: 0,
     time: '5:05PM',
     week: 7
   },
   {
     homeTeam: 'Better Call Gasol',
-    awayTeam: 'ABG (Anointed By God)',
-    homeScore: null,
-    awayScore: null,
+    awayTeam: 'ABG (Anointed by God)',
+    homeScore: 0,
+    awayScore: 0,
     time: '6:00PM',
     week: 7
   }
