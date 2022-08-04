@@ -224,11 +224,15 @@ td {
 
   .stat-heading,
   td {
-    font-size: 0.5rem;
+    font-size: 0.3rem;
   }
 
   .header-links{
     padding: 0 1rem;
-    width: 100%;
+    font-size: 0.8rem;
+  }
+
+  #logo {
+    margin: 0;
   }
 }
