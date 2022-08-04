@@ -12,8 +12,6 @@ export default class PlayerStats extends React.Component {
   }
 
   handleClick(event) {
-    // eslint-disable-next-line
-    console.log(event.target.innerText)
     this.setState({
       page: event.target.innerText
     });

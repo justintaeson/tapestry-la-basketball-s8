@@ -103,6 +103,24 @@ table {
   text-decoration: underline 2px;
 }
 
+.week-filter {
+  border: 2px solid black;
+  border-radius: 5rem;
+  margin: 2rem 0.5rem 0.5rem;
+  padding: 0.5rem
+}
+
+.totals-row{
+  background-color: orange;
+  font-weight: 700;
+  color: white
+}
+
+.team-name{
+  font-size: 1.5rem;
+  margin: 1rem 0
+}
+
 @media screen and (max-width: 768px) {
   .stats-header {
     font-size: 16px;

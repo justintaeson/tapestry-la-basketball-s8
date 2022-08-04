@@ -5,8 +5,6 @@ import { getTeamStats } from '../data/players';
 export default class TeamStats extends React.Component {
   render() {
     function formatStats(stat) {
-      // eslint-disable-next-line
-      console.log(stat);
       if (isNaN(stat)) {
         return '0.00%';
       } else {

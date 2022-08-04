@@ -43,19 +43,11 @@ export function getGamesPlayed(team) {
 
 export const teams = [
   {
-    team: 'Victorious Secret',
-    points: 0
-  },
-  {
-    team: 'Better Call Gasol',
-    points: 0
-  },
-  {
-    team: "Robin's Hood",
-    points: 0
-  },
-  {
     team: 'Run JHC',
+    points: 0
+  },
+  {
+    team: 'Victorious Secret',
     points: 0
   },
   {
@@ -63,15 +55,15 @@ export const teams = [
     points: 0
   },
   {
-    team: 'Crossovers For Christ',
-    points: 0
-  },
-  {
-    team: 'Team Noona',
+    team: "Robin's Hood",
     points: 0
   },
   {
     team: 'J-Walkers',
+    points: 0
+  },
+  {
+    team: 'Crossovers For Christ',
     points: 0
   },
   {
@@ -80,6 +72,14 @@ export const teams = [
   },
   {
     team: 'Goon Squad',
+    points: 0
+  },
+  {
+    team: 'Better Call Gasol',
+    points: 0
+  },
+  {
+    team: 'Team Noona',
     points: 0
   }
 ];
