@@ -57,6 +57,11 @@ table {
   border: 2px solid black;
 }
 
+.player-points{
+  background-color: lightgoldenrodyellow;
+  font-weight: 700;
+}
+
 .game-stats:hover,
 #home-button:hover,
 #away-button:hover,
@@ -107,7 +112,8 @@ table {
   border: 2px solid black;
   border-radius: 5rem;
   margin: 2rem 0.5rem 0.5rem;
-  padding: 0.5rem
+  padding: 0.5rem;
+  text-align: center;
 }
 
 .totals-row{
@@ -133,6 +139,10 @@ table {
 
   .stat-filter{
     font-size: 1rem;
+  }
+
+  .week-filter{
+    font-size: 0.5rem;
   }
 
   #home-button,

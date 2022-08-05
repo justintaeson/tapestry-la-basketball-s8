@@ -26,7 +26,7 @@ export default class PlayerStats extends React.Component {
         <tr key={player.name}>
           <td>{orderedArray.indexOf(player) + 1}</td>
           <td>{player.name}</td>
-          <td>{formatStats(getSum(player.points) / gamesPlayed(player.points)).slice(0, 4)}</td>
+          <td className='player-points'>{formatStats(getSum(player.points) / gamesPlayed(player.points)).slice(0, 4)}</td>
           <td>
             {formatStats(((getSum(player.twoMakes) + getSum(player.threeMakes)) / (getSum(player.twoAttempts) + getSum(player.threeAttempts))) * 100)}
           </td>
