@@ -92,6 +92,10 @@ body {
   top: 50%;
 }
 
+#update-text {
+  top: 60%
+}
+
 .box {
   width: 50%;
   display: flex;
@@ -265,6 +269,10 @@ td {
 
   #season-8{
     top: 40%
+  }
+
+  #update-text{
+    top: 50%
   }
 
   .team-container{
