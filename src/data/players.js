@@ -505,8 +505,8 @@ export const players = [
     twoAttempts: [1, 0, 0, null],
     ftMakes: [1, 0, 0, null],
     ftAttempts: [2, 0, 0, null],
-    threeMakes: [4, 2, 1, null],
-    threeAttempts: [0, 3, 6, null],
+    threeMakes: [0, 2, 1, null],
+    threeAttempts: [4, 3, 6, null],
     image: null
   },
   {

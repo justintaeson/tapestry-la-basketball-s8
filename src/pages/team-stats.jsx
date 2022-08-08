@@ -17,7 +17,7 @@ export default class TeamStats extends React.Component {
         <tr key={team.team}>
           <td>{team.team}</td>
           <td>{getGamesPlayed(team.team)}</td>
-          <td className='team-wins'>{getWins(team.team)}</td>
+          <td className='team-wins'>{getWins(team.team) + '-' + (getGamesPlayed(team.team) - getWins(team.team))}</td>
           <td>{getTotalPoints(team.team)}</td>
           <td>{(getTeamStats(team.team).twoMakes + getTeamStats(team.team).threeMakes) + '/' + (getTeamStats(team.team).twoAttempts + getTeamStats(team.team).threeAttempts)}</td>
           <td>{formatStats((getTeamStats(team.team).twoMakes + getTeamStats(team.team).threeMakes) / (getTeamStats(team.team).twoAttempts + getTeamStats(team.team).threeAttempts) * 100)}</td>
@@ -39,7 +39,7 @@ export default class TeamStats extends React.Component {
             <tr>
               <th className="stat-heading">TEAM</th>
               <th className="stat-heading">GP</th>
-              <th className="stat-heading">W</th>
+              <th className="stat-heading">W-L</th>
               <th className="stat-heading">PTS</th>
               <th className="stat-heading">FG</th>
               <th className="stat-heading">FG%</th>

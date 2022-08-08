@@ -13,6 +13,7 @@ export default class Teams extends React.Component {
 
   handleClick(event) {
     if (event.target.childNodes[0].data) {
+      window.location.hash = '#teams/' + event.target.childNodes[0].data;
       this.setState({
         team: event.target.childNodes[0].data
       });
@@ -57,7 +58,7 @@ export default class Teams extends React.Component {
       }
     });
 
-    if (this.state.team === null) {
+    if (this.state.team === null || window.location.hash === '#teams') {
       return (
       <div className='team-container'>
         {teams}

@@ -24,7 +24,7 @@ export default class App extends React.Component {
         </>
       );
     }
-    if (window.location.hash === '#schedule') {
+    if (window.location.hash === '#schedule' || window.location.hash.slice(0, 10) === '#schedule/') {
       window.onbeforeunload = function () {
         window.scrollTo(0, 0);
       };
@@ -35,7 +35,7 @@ export default class App extends React.Component {
         </>
       );
     }
-    if (window.location.hash === '#teams') {
+    if (window.location.hash === '#teams' || window.location.hash.slice(0, 7) === '#teams/') {
       window.onbeforeunload = function () {
         window.scrollTo(0, 0);
       };
@@ -46,7 +46,7 @@ export default class App extends React.Component {
         </>
       );
     }
-    if (window.location.hash === '#stats') {
+    if (window.location.hash === '#stats' || window.location.hash.slice(0, 7) === '#stats/') {
       return (
         <>
           <NavBar />

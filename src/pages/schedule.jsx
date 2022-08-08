@@ -25,9 +25,10 @@ export default class Schedule extends React.Component {
         page: event.target.innerText[5]
       });
     } else if (event.target.innerText === 'Stats') {
-      // eslint-disable-next-line
-      console.log(event.target.parentNode.previousElementSibling.children[0].children[0].innerText);
-
+      window.location.hash =
+        '#schedule/week' +
+        event.target.parentNode.previousElementSibling.previousElementSibling.children[0]
+          .innerText[5];
       this.setState({
         week: event.target.parentNode.previousElementSibling.previousElementSibling.children[0]
           .innerText[5],
@@ -39,21 +40,35 @@ export default class Schedule extends React.Component {
     }
   }
 
+  componentDidMount() {
+    window.addEventListener('hashchange', () => {
+      if (window.location.hash === '#schedule') {
+        this.setState({
+          week: null,
+          gameClicked: false,
+          awayTeam: null,
+          homeTeam: null,
+          page: '4'
+        });
+      }
+    });
+  }
+
   render() {
     const statFilter = () => {
       const filterNumbers = schedule.map(game => {
-        if (((schedule.indexOf(game) + 1) % 4 === 0)) {
+        if ((schedule.indexOf(game) + 1) % 4 === 0) {
           if (((schedule.indexOf(game) + 1) / 4).toString() === this.state.page) {
             return (
-            <p className="stat-filter week-filter yellow" onClick={this.handleClick}>
-              {'Week ' + this.state.page}
-            </p>
+              <p className="stat-filter week-filter yellow" onClick={this.handleClick}>
+                {'Week ' + this.state.page}
+              </p>
             );
           } else {
             return (
-            <p className="stat-filter week-filter" onClick={this.handleClick}>
-              {'Week ' + (schedule.indexOf(game) + 1) / 4}
-            </p>
+              <p className="stat-filter week-filter" onClick={this.handleClick}>
+                {'Week ' + (schedule.indexOf(game) + 1) / 4}
+              </p>
             );
           }
         }
@@ -62,9 +77,9 @@ export default class Schedule extends React.Component {
       return filterNumbers;
     };
 
-    if (this.state.gameClicked === true) {
+    if (this.state.gameClicked === true || window.location.hash.slice(0, 10) === '#schedule/') {
       return <GameStats state={this.state} />;
-    } else {
+    } else if (window.location.hash === '#schedule') {
       const schedule = ScheduleData.map(games => {
         if (!games.homeScore) {
           games.awayScore = '--';
@@ -103,9 +118,11 @@ export default class Schedule extends React.Component {
         return null;
       });
       return (
-      <>
-        <div className="row justify-center">{statFilter()}</div>{schedule}
-      </>);
+        <>
+          <div className="row justify-center">{statFilter()}</div>
+          {schedule}
+        </>
+      );
     }
   }
 }
