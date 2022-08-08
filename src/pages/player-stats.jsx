@@ -19,6 +19,8 @@ export default class PlayerStats extends React.Component {
 
   render() {
     const orderedArray = createOrderedArray();
+    // eslint-disable-next-line
+    console.log(orderedArray)
     const tableContent = orderedArray.map(player => {
       const currentIndex = orderedArray.indexOf(player);
       if (currentIndex >= (this.state.page * 10 - 10) && currentIndex < this.state.page * 10) {
