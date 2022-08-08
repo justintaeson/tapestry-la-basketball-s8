@@ -25,12 +25,15 @@ export default class Schedule extends React.Component {
         page: event.target.innerText[5]
       });
     } else if (event.target.innerText === 'Stats') {
+      // eslint-disable-next-line
+      console.log(event.target.parentNode.previousElementSibling.children[0].children[0].innerText);
+
       this.setState({
         week: event.target.parentNode.previousElementSibling.previousElementSibling.children[0]
           .innerText[5],
         gameClicked: true,
-        awayTeam: event.target.parentNode.previousElementSibling.children[0].children[0].innerText,
-        homeTeam: event.target.parentNode.previousElementSibling.children[1].children[0].innerText,
+        awayTeam: event.target.parentNode.previousElementSibling.children[1].children[0].innerText,
+        homeTeam: event.target.parentNode.previousElementSibling.children[0].children[0].innerText,
         page: null
       });
     }
