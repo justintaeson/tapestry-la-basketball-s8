@@ -19,8 +19,6 @@ export default class PlayerStats extends React.Component {
 
   render() {
     const orderedArray = createOrderedArray();
-    // eslint-disable-next-line
-    console.log(orderedArray)
     const tableContent = orderedArray.map(player => {
       const currentIndex = orderedArray.indexOf(player);
       if (currentIndex >= (this.state.page * 10 - 10) && currentIndex < this.state.page * 10) {
@@ -28,11 +26,15 @@ export default class PlayerStats extends React.Component {
         <tr key={player.name}>
           <td>{orderedArray.indexOf(player) + 1}</td>
           <td>{player.name}</td>
+          <td>{gamesPlayed(player.twoMakes)}</td>
           <td className='player-points'>{formatStats(getSum(player.points) / gamesPlayed(player.points)).slice(0, 4)}</td>
+          <td>
+            {(getSum(player.twoMakes) + getSum(player.threeMakes)) + '/' + (getSum(player.twoAttempts) + getSum(player.threeAttempts))}
+          </td>
+
           <td>
             {formatStats(((getSum(player.twoMakes) + getSum(player.threeMakes)) / (getSum(player.twoAttempts) + getSum(player.threeAttempts))) * 100)}
           </td>
-          <td>{formatStats((getSum(player.twoMakes) / getSum(player.twoAttempts)) * 100)}</td>
           <td>{formatStats((getSum(player.threeMakes) / getSum(player.threeAttempts)) * 100)}</td>
           <td>{formatStats(getSum(player.ftMakes) / getSum(player.ftAttempts) * 100)}</td>
         </tr>
@@ -66,9 +68,10 @@ export default class PlayerStats extends React.Component {
             <tr>
               <th className="player-stats-header">RANK</th>
               <th className="player-stats-header">PLAYER</th>
+              <th className="player-stats-header">GP</th>
               <th className="player-stats-header">PTS</th>
+              <th className="player-stats-header">FG</th>
               <th className="player-stats-header">FG%</th>
-              <th className="player-stats-header">2P%</th>
               <th className="player-stats-header">3P%</th>
               <th className="player-stats-header">FT%</th>
             </tr>
