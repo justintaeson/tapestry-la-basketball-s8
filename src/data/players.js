@@ -361,8 +361,8 @@ export const players = [
     twoAttempts: [3, null, 0, 7],
     ftMakes: [0, null, 0, 2],
     ftAttempts: [0, null, 0, 2],
-    threeMakes: [1, null, 0, 2],
-    threeAttempts: [2, null, 1, 3],
+    threeMakes: [1, null, 0, 1],
+    threeAttempts: [2, null, 1, 1],
     image: null
   },
   {
@@ -385,8 +385,8 @@ export const players = [
     twoAttempts: [null, null, 7, 5],
     ftMakes: [null, null, 0, 9],
     ftAttempts: [null, null, 0, 10],
-    threeMakes: [null, null, 0, 0],
-    threeAttempts: [null, null, 0, 0],
+    threeMakes: [null, null, 0, 1],
+    threeAttempts: [null, null, 0, 2],
     image: null
   },
   {
