@@ -55,19 +55,11 @@ export const teams = [
     points: 0
   },
   {
-    team: 'Crossovers For Christ',
-    points: 0
-  },
-  {
-    team: "Robin's Hood",
-    points: 0
-  },
-  {
     team: 'Better Call Gasol',
     points: 0
   },
   {
-    team: 'J-Walkers',
+    team: 'Crossovers For Christ',
     points: 0
   },
   {
@@ -75,11 +67,19 @@ export const teams = [
     points: 0
   },
   {
-    team: 'Kick Your Boaz',
+    team: "Robin's Hood",
+    points: 0
+  },
+  {
+    team: 'J-Walkers',
     points: 0
   },
   {
     team: 'Team Noona',
+    points: 0
+  },
+  {
+    team: 'Kick Your Boaz',
     points: 0
   }
 ];

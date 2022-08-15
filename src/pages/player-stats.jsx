@@ -26,6 +26,7 @@ export default class PlayerStats extends React.Component {
         <tr key={player.name}>
           <td>{orderedArray.indexOf(player) + 1}</td>
           <td>{player.name}</td>
+          <td>{player.team}</td>
           <td>{gamesPlayed(player.twoMakes)}</td>
           <td className='player-points'>{formatStats(getSum(player.points) / gamesPlayed(player.points)).slice(0, 4)}</td>
           <td>
@@ -68,6 +69,7 @@ export default class PlayerStats extends React.Component {
             <tr>
               <th className="player-stats-header">RANK</th>
               <th className="player-stats-header">PLAYER</th>
+              <th className="player-stats-header">TEAM</th>
               <th className="player-stats-header">GP</th>
               <th className="player-stats-header">PTS</th>
               <th className="player-stats-header">FG</th>
