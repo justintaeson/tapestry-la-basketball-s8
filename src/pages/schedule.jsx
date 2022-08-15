@@ -10,7 +10,7 @@ export default class Schedule extends React.Component {
       gameClicked: false,
       awayTeam: null,
       homeTeam: null,
-      page: '4'
+      page: '5'
     };
     this.handleClick = this.handleClick.bind(this);
   }
@@ -48,7 +48,7 @@ export default class Schedule extends React.Component {
           gameClicked: false,
           awayTeam: null,
           homeTeam: null,
-          page: '4'
+          page: '5'
         });
       }
     });
@@ -57,6 +57,8 @@ export default class Schedule extends React.Component {
   render() {
     const statFilter = () => {
       const filterNumbers = schedule.map(game => {
+        // eslint-disable-next-line
+        console.log(schedule.indexOf(game));
         if ((schedule.indexOf(game) + 1) % 4 === 0) {
           if (((schedule.indexOf(game) + 1) / 4).toString() === this.state.page) {
             return (
@@ -71,6 +73,14 @@ export default class Schedule extends React.Component {
               </p>
             );
           }
+        }
+        if (schedule.indexOf(game) === 29) {
+          return (
+            <p className="stat-filter week-filter" onClick={this.handleClick}>
+                {'Week 8'}
+              </p>
+          );
+
         }
         return null;
       });

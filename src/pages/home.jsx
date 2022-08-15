@@ -18,7 +18,7 @@ export default class Home extends React.Component {
           <h1 id="season-8" className="home-text">
             Season 8
           </h1>
-          <h3 id="update-text" className='home-text'>**Last Updated: 8/8/22</h3>
+          <h3 id="update-text" className='home-text'>**Last Updated: 8/14/22</h3>
         </div>
       </main>
     );
