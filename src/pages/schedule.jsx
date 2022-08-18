@@ -10,7 +10,7 @@ export default class Schedule extends React.Component {
       gameClicked: false,
       awayTeam: null,
       homeTeam: null,
-      page: '5'
+      page: '6'
     };
     this.handleClick = this.handleClick.bind(this);
   }
@@ -48,7 +48,7 @@ export default class Schedule extends React.Component {
           gameClicked: false,
           awayTeam: null,
           homeTeam: null,
-          page: '5'
+          page: '6'
         });
       }
     });
