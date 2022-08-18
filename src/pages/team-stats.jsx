@@ -1,57 +1,108 @@
 import React from 'react';
-import { getGamesPlayed, getTotalPoints, getWins, teams } from '../data/teams';
-import { getTeamStats } from '../data/players';
+import TeamStatsFilter from './team-stat-filter';
 
 export default class TeamStats extends React.Component {
-  render() {
-    function formatStats(stat) {
-      if (isNaN(stat)) {
-        return '0.00%';
-      } else {
-        return stat.toFixed(2) + '%';
-      }
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      page: 'general'
+    };
+    this.handleClick = this.handleClick.bind(this);
+  }
 
-    const tableContent = teams.map(team => {
-      return (
-        <tr key={team.team}>
-          <td>{team.team}</td>
-          <td>{getGamesPlayed(team.team)}</td>
-          <td className='team-wins'>{getWins(team.team) + '-' + (getGamesPlayed(team.team) - getWins(team.team))}</td>
-          <td>{getTotalPoints(team.team)}</td>
-          <td>{(getTeamStats(team.team).twoMakes + getTeamStats(team.team).threeMakes) + '/' + (getTeamStats(team.team).twoAttempts + getTeamStats(team.team).threeAttempts)}</td>
-          <td>{formatStats((getTeamStats(team.team).twoMakes + getTeamStats(team.team).threeMakes) / (getTeamStats(team.team).twoAttempts + getTeamStats(team.team).threeAttempts) * 100)}</td>
-          <td>{getTeamStats(team.team).threeMakes + '/' + getTeamStats(team.team).threeAttempts}</td>
-          <td>{formatStats(getTeamStats(team.team).threeMakes / getTeamStats(team.team).threeAttempts * 100)}</td>
-          <td>{getTeamStats(team.team).ftMakes + '/' + getTeamStats(team.team).ftAttempts}</td>
-          <td>{formatStats(getTeamStats(team.team).ftMakes / getTeamStats(team.team).ftAttempts * 100)}</td>
-        </tr>
-      );
+  handleClick(event) {
+    this.setState({
+      page: event.target.innerText
     });
+  }
+
+  render() {
+    const data = () => {
+      if (this.state.page === 'general') {
+        return (
+          <>
+            <div className='row justify-center'>
+              <p className='stat-filter team-stat-filter yellow' onClick={this.handleClick}>general</p>
+              <p className='stat-filter team-stat-filter' onClick={this.handleClick}>offense</p>
+              <p className='stat-filter team-stat-filter' onClick={this.handleClick}>defense</p>
+            </div>
+            <table>
+              <tbody>
+                <tr>
+                  <th className="stat-heading">SEED</th>
+                  <th className="stat-heading">TEAM</th>
+                  <th className="stat-heading">GP</th>
+                  <th className="stat-heading">W-L</th>
+                  <th className="stat-heading">PTS</th>
+                  <th className="stat-heading">PTS ALLOWED</th>
+                  <th className="stat-heading">PT DIFF</th>
+                </tr>
+                <TeamStatsFilter state={this.state} />
+              </tbody>
+            </table>
+          </>
+        );
+      }
+
+      if (this.state.page === 'offense') {
+        return (
+          <>
+            <div className='row justify-center'>
+              <p className='stat-filter team-stat-filter' onClick={this.handleClick}>general</p>
+              <p className='stat-filter team-stat-filter yellow' onClick={this.handleClick}>offense</p>
+              <p className='stat-filter team-stat-filter' onClick={this.handleClick}>defense</p>
+            </div>
+            <table>
+              <tbody>
+                <tr>
+                  <th className="stat-heading">TEAM</th>
+                  <th className="stat-heading">PTS</th>
+                  <th className="stat-heading">FG</th>
+                  <th className="stat-heading">FG%</th>
+                  <th className="stat-heading">3P</th>
+                  <th className="stat-heading">3P%</th>
+                  <th className="stat-heading">FT</th>
+                  <th className="stat-heading">FT%</th>
+                </tr>
+                <TeamStatsFilter state={this.state}/>
+              </tbody>
+            </table>
+          </>
+        );
+      }
+
+      if (this.state.page === 'defense') {
+        return (
+          <>
+            <div className='row justify-center'>
+              <p className='stat-filter team-stat-filter' onClick={this.handleClick}>general</p>
+              <p className='stat-filter team-stat-filter' onClick={this.handleClick}>offense</p>
+              <p className='stat-filter team-stat-filter yellow' onClick={this.handleClick}>defense</p>
+            </div>
+            <table>
+              <tbody>
+                <tr>
+                  <th className="stat-heading">TEAM</th>
+                  <th className="stat-heading">PTS ALLOWED</th>
+                  <th className="stat-heading">Opp FG</th>
+                  <th className="stat-heading">Opp FG%</th>
+                  <th className="stat-heading">Opp 3P</th>
+                  <th className="stat-heading">Opp 3P%</th>
+                  <th className="stat-heading">Opp FT</th>
+                  <th className="stat-heading">Opp FT%</th>
+                </tr>
+                <TeamStatsFilter state={this.state} />
+              </tbody>
+            </table>
+          </>
+        );
+      }
+    };
 
     return (
-      <>
-        <div className="row">
-          <h1 className="stats-header">Team Stats</h1>
-        </div>
-        <table>
-          <tbody>
-            <tr>
-              <th className="stat-heading">TEAM</th>
-              <th className="stat-heading">GP</th>
-              <th className="stat-heading">W-L</th>
-              <th className="stat-heading">PTS</th>
-              <th className="stat-heading">FG</th>
-              <th className="stat-heading">FG%</th>
-              <th className="stat-heading">3P</th>
-              <th className="stat-heading">3P%</th>
-              <th className="stat-heading">FT</th>
-              <th className="stat-heading">FT%</th>
-            </tr>
-            {tableContent}
-          </tbody>
-        </table>
-      </>
+        <>
+        {data()}
+        </>
     );
   }
 }

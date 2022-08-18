@@ -47,11 +47,11 @@ export const teams = [
     points: 0
   },
   {
-    team: 'Victorious Secret',
+    team: 'ABG (Anointed by God)',
     points: 0
   },
   {
-    team: 'ABG (Anointed by God)',
+    team: 'Victorious Secret',
     points: 0
   },
   {
@@ -59,7 +59,7 @@ export const teams = [
     points: 0
   },
   {
-    team: 'Crossovers For Christ',
+    team: "Robin's Hood",
     points: 0
   },
   {
@@ -67,7 +67,7 @@ export const teams = [
     points: 0
   },
   {
-    team: "Robin's Hood",
+    team: 'Crossovers For Christ',
     points: 0
   },
   {
