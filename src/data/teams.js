@@ -55,6 +55,10 @@ export const teams = [
     points: 0
   },
   {
+    team: 'Goon Squad',
+    points: 0
+  },
+  {
     team: 'Better Call Gasol',
     points: 0
   },
@@ -63,15 +67,11 @@ export const teams = [
     points: 0
   },
   {
-    team: 'Goon Squad',
+    team: 'J-Walkers',
     points: 0
   },
   {
     team: 'Crossovers For Christ',
-    points: 0
-  },
-  {
-    team: 'J-Walkers',
     points: 0
   },
   {
