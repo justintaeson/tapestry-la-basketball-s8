@@ -1,7 +1,7 @@
 import React from 'react';
 import Home from './pages/home';
 import NavBar from './navbar';
-import Schedule from './pages/schedule';
+import Schedule from './pages/season-schedule';
 import Teams from './pages/teams';
 import Stats from './pages/stats';
 

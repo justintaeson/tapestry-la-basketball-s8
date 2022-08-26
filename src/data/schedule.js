@@ -313,7 +313,7 @@ export const schedule = [
     awayTeam: 'Victorious Secret',
     homeScore: 0,
     awayScore: 0,
-    time: '3:15PM',
+    time: '5:00PM',
     week: 8
   },
   {
@@ -321,7 +321,32 @@ export const schedule = [
     awayTeam: 'ABG (Anointed by God)',
     homeScore: 0,
     awayScore: 0,
-    time: '4:10PM',
+    time: '6:00PM',
     week: 8
+  },
+  // Week 9 PLAYOFFS
+  {
+    homeTeam: 'Run JHC',
+    awayTeam: 'Goon Squad',
+    homeScore: 0,
+    awayScore: 0,
+    time: '4:00PM',
+    week: 9
+  },
+  {
+    homeTeam: 'ABG (Anointed by God)',
+    awayTeam: 'Victorious Secret',
+    homeScore: 0,
+    awayScore: 0,
+    time: '5:00PM',
+    week: 9
+  },
+  {
+    homeTeam: 'TBD',
+    awayTeam: 'TBD',
+    homeScore: 0,
+    awayScore: 0,
+    time: '6:30PM',
+    week: 9
   }
 ];
