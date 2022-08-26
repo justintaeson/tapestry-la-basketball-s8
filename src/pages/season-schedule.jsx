@@ -70,13 +70,13 @@ export default class Schedule extends React.Component {
         if (((schedule.indexOf(game) + 1) % 4 === 0 && (schedule.indexOf(game) + 1) < 30) || schedule.indexOf(game) === 29) {
           if (game.week.toString() === this.state.page) {
             return (
-              <p className="stats-filter week-filter yellow" onClick={this.handleClick}>
+              <p className="stat-filter week-filter yellow" onClick={this.handleClick}>
                 {'Week ' + this.state.page}
               </p>
             );
           } else {
             return (
-              <p className="stats-filter week-filter" onClick={this.handleClick}>
+              <p className="stat-filter week-filter" onClick={this.handleClick}>
                 {'Week ' + game.week}
               </p>
             );
@@ -84,13 +84,13 @@ export default class Schedule extends React.Component {
         } else if ((schedule.indexOf(game) + 1) % 4 === 0 && (schedule.indexOf(game) + 1) > 30) {
           if (game.week.toString() === this.state.page) {
             return (
-              <p className="stats-filter week-filter yellow" onClick={this.handleClick}>
+              <p className="stat-filter week-filter yellow" onClick={this.handleClick}>
                 {'PLAYOFFS: Week ' + this.state.page}
               </p>
             );
           } else {
             return (
-              <p className="stats-filter week-filter" onClick={this.handleClick}>
+              <p className="stat-filter week-filter" onClick={this.handleClick}>
                 {'PLAYOFFS: Week 9'}
               </p>
             );
