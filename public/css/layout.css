@@ -216,6 +216,10 @@ td {
   margin: 2rem 0
 }
 
+.filter-row {
+  display: inline-flex;
+}
+
 @media screen and (max-width: 768px) {
   .column-one-half {
     max-width: 50%;
