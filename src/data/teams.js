@@ -63,15 +63,15 @@ export const teams = [
     points: 0
   },
   {
+    team: 'Crossovers For Christ',
+    points: 0
+  },
+  {
     team: "Robin's Hood",
     points: 0
   },
   {
     team: 'J-Walkers',
-    points: 0
-  },
-  {
-    team: 'Crossovers For Christ',
     points: 0
   },
   {

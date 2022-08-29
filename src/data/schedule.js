@@ -278,32 +278,32 @@ export const schedule = [
   {
     homeTeam: 'J-Walkers',
     awayTeam: 'Run JHC',
-    homeScore: 0,
-    awayScore: 0,
+    homeScore: 47,
+    awayScore: 51,
     time: '3:15PM',
     week: 7
   },
   {
     homeTeam: 'Victorious Secret',
     awayTeam: 'Team Noona',
-    homeScore: 0,
-    awayScore: 0,
+    homeScore: 46,
+    awayScore: 53,
     time: '4:10PM',
     week: 7
   },
   {
     homeTeam: 'Kick Your Boaz',
     awayTeam: 'Crossovers For Christ',
-    homeScore: 0,
-    awayScore: 0,
+    homeScore: 39,
+    awayScore: 67,
     time: '5:05PM',
     week: 7
   },
   {
     homeTeam: 'Better Call Gasol',
     awayTeam: 'ABG (Anointed by God)',
-    homeScore: 0,
-    awayScore: 0,
+    homeScore: 35,
+    awayScore: 28,
     time: '6:00PM',
     week: 7
   },
