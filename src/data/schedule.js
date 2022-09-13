@@ -311,31 +311,31 @@ export const schedule = [
   {
     homeTeam: 'Goon Squad',
     awayTeam: 'Victorious Secret',
-    homeScore: 0,
-    awayScore: 0,
+    homeScore: 46,
+    awayScore: 33,
     time: '5:00PM',
     week: 8
   },
   {
     homeTeam: "Robin's Hood",
     awayTeam: 'ABG (Anointed by God)',
-    homeScore: 0,
-    awayScore: 0,
+    homeScore: 48,
+    awayScore: 47,
     time: '6:00PM',
     week: 8
   },
   // Week 9 PLAYOFFS
   {
     homeTeam: 'Run JHC',
-    awayTeam: 'Goon Squad',
+    awayTeam: 'Better Call Gasol',
     homeScore: 0,
     awayScore: 0,
     time: '4:00PM',
     week: 9
   },
   {
-    homeTeam: 'ABG (Anointed by God)',
-    awayTeam: 'Victorious Secret',
+    homeTeam: 'Goon Squad',
+    awayTeam: 'ABG (Anointed by God)',
     homeScore: 0,
     awayScore: 0,
     time: '5:00PM',

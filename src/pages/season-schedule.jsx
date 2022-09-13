@@ -10,7 +10,7 @@ export default class Schedule extends React.Component {
       gameClicked: false,
       awayTeam: null,
       homeTeam: null,
-      page: '7'
+      page: '8'
     };
     this.handleClick = this.handleClick.bind(this);
   }
@@ -58,7 +58,7 @@ export default class Schedule extends React.Component {
           gameClicked: false,
           awayTeam: null,
           homeTeam: null,
-          page: '7'
+          page: '9'
         });
       }
     });
@@ -85,13 +85,13 @@ export default class Schedule extends React.Component {
           if (game.week.toString() === this.state.page) {
             return (
               <p className="stat-filter week-filter yellow" onClick={this.handleClick}>
-                {'PLAYOFFS: Week ' + this.state.page}
+                {'PLAYOFFS'}
               </p>
             );
           } else {
             return (
               <p className="stat-filter week-filter" onClick={this.handleClick}>
-                {'PLAYOFFS: Week 9'}
+                {'PLAYOFFS'}
               </p>
             );
           }
