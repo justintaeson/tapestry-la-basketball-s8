@@ -50,8 +50,7 @@ export class GameStats extends React.Component {
         return stat;
       }
     }
-    const gameStats = playersData.map(player => {
-
+    const gameStats = playersData.map((player) => {
       const homeTeam = this.props.state.homeTeam;
       const awayTeam = this.props.state.awayTeam;
 
@@ -64,8 +63,14 @@ export class GameStats extends React.Component {
       };
 
       if (teamDecider() === player.team) {
-
-        if (player.twoAttempts[this.props.state.week - 1] !== null) {
+        if (this.props.state.playoffs === 'C') {
+          totalObject.twoMakes += player.twoMakes[this.props.state.week];
+          totalObject.twoAttempts += player.twoAttempts[this.props.state.week];
+          totalObject.threeMakes += player.threeMakes[this.props.state.week];
+          totalObject.threeAttempts += player.threeAttempts[this.props.state.week];
+          totalObject.ftMakes += player.ftMakes[this.props.state.week];
+          totalObject.ftAttempts += player.ftAttempts[this.props.state.week];
+        } else if (player.twoAttempts[this.props.state.week - 1] !== null) {
           totalObject.twoMakes += player.twoMakes[this.props.state.week - 1];
           totalObject.twoAttempts += player.twoAttempts[this.props.state.week - 1];
           totalObject.threeMakes += player.threeMakes[this.props.state.week - 1];
@@ -74,7 +79,10 @@ export class GameStats extends React.Component {
           totalObject.ftAttempts += player.ftAttempts[this.props.state.week - 1];
         }
 
-        if (player.twoMakes[this.props.state.week - 1] === undefined) {
+        if (
+          player.twoMakes[this.props.state.week - 1] === undefined ||
+          player.twoMakes[this.props.state.week - 1] === null
+        ) {
           return (
             <tr key={player.name}>
               <td>{player.name}</td>
@@ -92,13 +100,8 @@ export class GameStats extends React.Component {
         const formatStats = (makes, attempts) => {
           if (attempts === 0) {
             return '0.00%';
-          } else if ((makes / attempts) || makes !== null) {
-            return (
-              (
-                (makes / attempts) *
-                100
-              ).toFixed(2) + '%'
-            );
+          } else if (makes / attempts || makes !== null) {
+            return ((makes / attempts) * 100).toFixed(2) + '%';
           }
         };
 
@@ -125,13 +128,23 @@ export class GameStats extends React.Component {
                 '/' +
                 checkStat(player.threeAttempts[this.props.state.week - 1])}
             </td>
-            <td>{formatStats(player.threeMakes[this.props.state.week - 1], player.threeAttempts[this.props.state.week - 1])}</td>
+            <td>
+              {formatStats(
+                player.threeMakes[this.props.state.week - 1],
+                player.threeAttempts[this.props.state.week - 1]
+              )}
+            </td>
             <td>
               {checkStat(player.ftMakes[this.props.state.week - 1]) +
                 '/' +
                 checkStat(player.ftAttempts[this.props.state.week - 1])}
             </td>
-            <td>{formatStats(player.ftMakes[this.props.state.week - 1], player.ftAttempts[this.props.state.week - 1])}</td>
+            <td>
+              {formatStats(
+                player.ftMakes[this.props.state.week - 1],
+                player.ftAttempts[this.props.state.week - 1]
+              )}
+            </td>
             <td>
               {player.twoMakes[this.props.state.week - 1] +
                 player.threeMakes[this.props.state.week - 1] +
@@ -141,10 +154,10 @@ export class GameStats extends React.Component {
             </td>
             <td>
               {formatStats(
-                (player.twoMakes[this.props.state.week - 1] +
-                  player.threeMakes[this.props.state.week - 1]),
-                (player.twoAttempts[this.props.state.week - 1] +
-                    player.threeAttempts[this.props.state.week - 1])
+                player.twoMakes[this.props.state.week - 1] +
+                  player.threeMakes[this.props.state.week - 1],
+                player.twoAttempts[this.props.state.week - 1] +
+                  player.threeAttempts[this.props.state.week - 1]
               )}
             </td>
             <td>
@@ -160,28 +173,39 @@ export class GameStats extends React.Component {
     const totalStats = () => {
       if (totalObject.twoMakes) {
         return (
-      <>
-        <td>TEAM</td>
-        <td>{totalObject.threeMakes + '/' + totalObject.threeAttempts}</td>
-        <td>{((totalObject.threeMakes / totalObject.threeAttempts) * 100).toFixed(2) + '%'}</td>
-        <td>{totalObject.ftMakes + '/' + totalObject.ftAttempts}</td>
-        <td>{((totalObject.ftMakes / totalObject.ftAttempts) * 100).toFixed(2) + '%'}</td>
-        <td>{(totalObject.twoMakes + totalObject.threeMakes) + '/' + (totalObject.twoAttempts + totalObject.threeAttempts)}</td>
-        <td>{((totalObject.twoMakes + totalObject.threeMakes) / (totalObject.twoAttempts + totalObject.threeAttempts) * 100).toFixed(2) + '%'}</td>
-        <td>{totalObject.twoMakes * 2 + totalObject.threeMakes * 3 + totalObject.ftMakes}</td>
-      </>
+          <>
+            <td>TEAM</td>
+            <td>{totalObject.threeMakes + '/' + totalObject.threeAttempts}</td>
+            <td>{((totalObject.threeMakes / totalObject.threeAttempts) * 100).toFixed(2) + '%'}</td>
+            <td>{totalObject.ftMakes + '/' + totalObject.ftAttempts}</td>
+            <td>{((totalObject.ftMakes / totalObject.ftAttempts) * 100).toFixed(2) + '%'}</td>
+            <td>
+              {totalObject.twoMakes +
+                totalObject.threeMakes +
+                '/' +
+                (totalObject.twoAttempts + totalObject.threeAttempts)}
+            </td>
+            <td>
+              {(
+                ((totalObject.twoMakes + totalObject.threeMakes) /
+                  (totalObject.twoAttempts + totalObject.threeAttempts)) *
+                100
+              ).toFixed(2) + '%'}
+            </td>
+            <td>{totalObject.twoMakes * 2 + totalObject.threeMakes * 3 + totalObject.ftMakes}</td>
+          </>
         );
       } else {
         return (
           <>
-          <td>TEAM</td>
-          <td>--</td>
-          <td>--</td>
-          <td>--</td>
-          <td>--</td>
-          <td>--</td>
-          <td>--</td>
-          <td>--</td>
+            <td>TEAM</td>
+            <td>--</td>
+            <td>--</td>
+            <td>--</td>
+            <td>--</td>
+            <td>--</td>
+            <td>--</td>
+            <td>--</td>
           </>
         );
       }
@@ -202,7 +226,7 @@ export class GameStats extends React.Component {
           </div>
         </div>
 
-        <div className='row justify-center team-name'>{this.state.team}</div>
+        <div className="row justify-center team-name">{this.state.team}</div>
 
         <table>
           <tbody>
@@ -217,7 +241,7 @@ export class GameStats extends React.Component {
               <th className="stat-heading">PTS</th>
             </tr>
             {gameStats}
-            <tr className='totals-row'>{totalStats()}</tr>
+            <tr className="totals-row">{totalStats()}</tr>
           </tbody>
         </table>
       </>

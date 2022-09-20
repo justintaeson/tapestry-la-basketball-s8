@@ -5,7 +5,7 @@ export function getPointDifferential(team) {
     pointsFor: 0,
     pointsAgainst: 0
   };
-  schedule.map(game => {
+  schedule.map((game) => {
     if (game.homeScore === 0) {
       return null;
     }
@@ -36,7 +36,7 @@ export function getOpposingStats(team) {
     threeAttempts: 0
   };
 
-  schedule.map(game => {
+  schedule.map((game) => {
     if (game.homeScore === 0) {
       return null;
     }
@@ -52,8 +52,8 @@ export function getOpposingStats(team) {
     return null;
   });
 
-  teamObject.opponents.map(opponent => {
-    players.map(player => {
+  teamObject.opponents.map((opponent) => {
+    players.map((player) => {
       if (player.team === opponent) {
         teamObject.twoMakes += player.twoMakes[teamObject.opponents.indexOf(opponent)];
         teamObject.twoAttempts += player.twoAttempts[teamObject.opponents.indexOf(opponent)];
@@ -328,25 +328,25 @@ export const schedule = [
   {
     homeTeam: 'Run JHC',
     awayTeam: 'Better Call Gasol',
-    homeScore: 0,
-    awayScore: 0,
-    time: '4:00PM',
+    homeScore: 41,
+    awayScore: 32,
+    time: '4:00PM (Semi-finals)',
     week: 9
   },
   {
     homeTeam: 'Goon Squad',
     awayTeam: 'ABG (Anointed by God)',
-    homeScore: 0,
-    awayScore: 0,
-    time: '5:00PM',
+    homeScore: 26,
+    awayScore: 33,
+    time: '5:00PM (Semi-finals)',
     week: 9
   },
   {
-    homeTeam: 'TBD',
-    awayTeam: 'TBD',
-    homeScore: 0,
-    awayScore: 0,
-    time: '6:30PM',
+    homeTeam: 'Run JHC',
+    awayTeam: 'ABG (Anointed by God)',
+    homeScore: 41,
+    awayScore: 44,
+    time: '6:30PM (Championship)',
     week: 9
   }
 ];
