@@ -10,22 +10,12 @@ export default class Schedule extends React.Component {
       gameClicked: false,
       awayTeam: null,
       homeTeam: null,
-      page: '8'
+      page: '9'
     };
     this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick(event) {
-    if (event.target.innerText[0] === 'P') {
-      this.setState({
-        week: null,
-        gameClicked: false,
-        awayTeam: null,
-        homeTeam: null,
-        page: '9'
-      });
-    }
-
     if (event.target.innerText[0] === 'W') {
       this.setState({
         week: null,
@@ -45,7 +35,10 @@ export default class Schedule extends React.Component {
         gameClicked: true,
         awayTeam: event.target.parentNode.previousElementSibling.children[1].children[0].innerText,
         homeTeam: event.target.parentNode.previousElementSibling.children[0].children[0].innerText,
-        page: null
+        page: null,
+        playoffs:
+          event.target.parentNode.previousElementSibling.previousElementSibling.children[1]
+            .innerText[8]
       });
     }
   }
@@ -66,8 +59,11 @@ export default class Schedule extends React.Component {
 
   render() {
     const statFilter = () => {
-      const filterNumbers = schedule.map(game => {
-        if (((schedule.indexOf(game) + 1) % 4 === 0 && (schedule.indexOf(game) + 1) < 30) || schedule.indexOf(game) === 29) {
+      const filterNumbers = schedule.map((game) => {
+        if (
+          ((schedule.indexOf(game) + 1) % 4 === 0 && schedule.indexOf(game) + 1 < 30) ||
+          schedule.indexOf(game) === 29
+        ) {
           if (game.week.toString() === this.state.page) {
             return (
               <p className="stat-filter week-filter yellow" onClick={this.handleClick}>
@@ -81,17 +77,17 @@ export default class Schedule extends React.Component {
               </p>
             );
           }
-        } else if ((schedule.indexOf(game) + 1) % 4 === 0 && (schedule.indexOf(game) + 1) > 30) {
+        } else if ((schedule.indexOf(game) + 1) % 4 === 0 && schedule.indexOf(game) + 1 > 30) {
           if (game.week.toString() === this.state.page) {
             return (
               <p className="stat-filter week-filter yellow" onClick={this.handleClick}>
-                {'PLAYOFFS'}
+                {'Week 9 Playoffs'}
               </p>
             );
           } else {
             return (
               <p className="stat-filter week-filter" onClick={this.handleClick}>
-                {'PLAYOFFS'}
+                {'Week 9 Playoffs'}
               </p>
             );
           }
@@ -104,25 +100,8 @@ export default class Schedule extends React.Component {
     if (this.state.gameClicked === true || window.location.hash.slice(0, 10) === '#schedule/') {
       return <GameStats state={this.state} />;
     } else if (window.location.hash === '#schedule') {
-      const schedule = ScheduleData.map(games => {
-        const currentIndex = ScheduleData.indexOf(games);
-        if (games.homeScore === 0) {
-          games.awayScore = '--';
-          games.homeScore = '--';
-        }
-        const calculateSeed = homeOrAway => {
-          if (homeOrAway === 'home' && currentIndex === 30) {
-            return '#1 ';
-          } else if (homeOrAway === 'away' && currentIndex === 30) {
-            return '#4 ';
-          } else if (homeOrAway === 'home' && currentIndex === 31) {
-            return '#2 ';
-          } else if (homeOrAway === 'away' && currentIndex === 31) {
-            return '#3 ';
-          }
-          return '';
-        };
-        if (games.week === this.state.page * 1 && games.week < 9) {
+      const schedule = ScheduleData.map((games) => {
+        if (games.week === this.state.page * 1) {
           return (
             <>
               <div key={games.week + games.time} className="schedule-row">
@@ -138,34 +117,6 @@ export default class Schedule extends React.Component {
                     </div>
                     <div className="column-one-half flex-column align-center">
                       <p className="away-content">{games.awayTeam}</p>
-                      <p className="away-score">{games.awayScore}</p>
-                    </div>
-                  </div>
-                  <div className="row flex-wrap game-row">
-                    <p className="game-stats justify-center" onClick={this.handleClick}>
-                      Stats
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </>
-          );
-        } else if (games.week === 9 && this.state.page === '9') {
-          return (
-            <>
-              <div key={games.week + games.time} className="schedule-row">
-                <div className="box flex-wrap" onClick={this.handleClick}>
-                  <div className="row flex-wrap game-row">
-                    <p className="game-info justify-center">Week {games.week}</p>
-                    <p className="game-info justify-center">{games.time}</p>
-                  </div>
-                  <div className="row">
-                    <div className="column-one-half flex-column align-center">
-                      <p className="home-content">{calculateSeed('home') + games.homeTeam}</p>
-                      <p className="home-score">{games.homeScore}</p>
-                    </div>
-                    <div className="column-one-half flex-column align-center">
-                      <p className="away-content">{calculateSeed('away') + games.awayTeam}</p>
                       <p className="away-score">{games.awayScore}</p>
                     </div>
                   </div>
