@@ -79,29 +79,29 @@ export function getTeamStats(team) {
     threeMakes: 0,
     threeAttempts: 0
   };
-  players.map(playerObject => {
+  players.map((playerObject) => {
     if (team === playerObject.team) {
-      playerObject.twoMakes.map(gameStat => {
+      playerObject.twoMakes.map((gameStat) => {
         teamObject.twoMakes += gameStat;
         return null;
       });
-      playerObject.twoAttempts.map(gameStat => {
+      playerObject.twoAttempts.map((gameStat) => {
         teamObject.twoAttempts += gameStat;
         return null;
       });
-      playerObject.threeMakes.map(gameStat => {
+      playerObject.threeMakes.map((gameStat) => {
         teamObject.threeMakes += gameStat;
         return null;
       });
-      playerObject.threeAttempts.map(gameStat => {
+      playerObject.threeAttempts.map((gameStat) => {
         teamObject.threeAttempts += gameStat;
         return null;
       });
-      playerObject.ftMakes.map(gameStat => {
+      playerObject.ftMakes.map((gameStat) => {
         teamObject.ftMakes += gameStat;
         return null;
       });
-      playerObject.ftAttempts.map(gameStat => {
+      playerObject.ftAttempts.map((gameStat) => {
         teamObject.ftAttempts += gameStat;
         return null;
       });

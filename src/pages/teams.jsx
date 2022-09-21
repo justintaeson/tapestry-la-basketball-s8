@@ -22,34 +22,44 @@ export default class Teams extends React.Component {
 
   componentDidMount() {
     window.addEventListener('hashchange', () => {
-      this.setState({
-      });
+      this.setState({});
     });
   }
 
   render() {
-    const teams = TeamsData.map(team => {
+    const teams = TeamsData.map((team) => {
       return (
-          <div key={team.team} className="teams-row justify-center" onClick={this.handleClick}>
-            <div className="teams-box">
-              <div className="row justify-center">{team.team}</div>
-            </div>
+        <div key={team.team} className="teams-row justify-center" onClick={this.handleClick}>
+          <div className="teams-box">
+            <div className="row justify-center">{team.team}</div>
           </div>
+        </div>
       );
     });
 
-    const playersData = PlayersData.map(player => {
+    const playersData = PlayersData.map((player) => {
       if (player.team === this.state.team) {
         return (
           <tr key={player.name}>
             <td>{player.name}</td>
             <td>{gamesPlayed(player.twoMakes)}</td>
             <td>{getSum(player.threeMakes) + '/' + getSum(player.threeAttempts)}</td>
-            <td>{formatStats(getSum(player.threeMakes) / getSum(player.threeAttempts) * 100)}</td>
+            <td>{formatStats((getSum(player.threeMakes) / getSum(player.threeAttempts)) * 100)}</td>
             <td>{getSum(player.ftMakes) + '/' + getSum(player.ftAttempts)}</td>
-            <td>{formatStats(getSum(player.ftMakes) / getSum(player.ftAttempts) * 100)}</td>
-            <td>{(getSum(player.twoMakes) + getSum(player.threeMakes)) + '/' + (getSum(player.twoAttempts) + getSum(player.threeAttempts))}</td>
-            <td>{formatStats(((getSum(player.twoMakes) + getSum(player.threeMakes)) / (getSum(player.twoAttempts) + getSum(player.threeAttempts))) * 100)}</td>
+            <td>{formatStats((getSum(player.ftMakes) / getSum(player.ftAttempts)) * 100)}</td>
+            <td>
+              {getSum(player.twoMakes) +
+                getSum(player.threeMakes) +
+                '/' +
+                (getSum(player.twoAttempts) + getSum(player.threeAttempts))}
+            </td>
+            <td>
+              {formatStats(
+                ((getSum(player.twoMakes) + getSum(player.threeMakes)) /
+                  (getSum(player.twoAttempts) + getSum(player.threeAttempts))) *
+                  100
+              )}
+            </td>
             <td>{formatStats(getSum(player.points) / gamesPlayed(player.twoMakes)).slice(0, 4)}</td>
           </tr>
         );
@@ -59,11 +69,7 @@ export default class Teams extends React.Component {
     });
 
     if (this.state.team === null || window.location.hash === '#teams') {
-      return (
-      <div className='team-container'>
-        {teams}
-      </div>
-      );
+      return <div className="team-container">{teams}</div>;
     } else {
       return (
         <>

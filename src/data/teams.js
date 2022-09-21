@@ -20,7 +20,7 @@ export function getTotalPoints(team) {
 
 export function getWins(team) {
   let winCounter = 0;
-  schedule.map(game => {
+  schedule.map((game) => {
     if (team === game.homeTeam && game.homeScore > game.awayScore) {
       winCounter++;
     } else if (team === game.awayTeam && game.awayScore > game.homeScore) {

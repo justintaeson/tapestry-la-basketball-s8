@@ -66,8 +66,11 @@ export default class Schedule extends React.Component {
 
   render() {
     const statFilter = () => {
-      const filterNumbers = schedule.map(game => {
-        if (((schedule.indexOf(game) + 1) % 4 === 0 && (schedule.indexOf(game) + 1) < 30) || schedule.indexOf(game) === 29) {
+      const filterNumbers = schedule.map((game) => {
+        if (
+          ((schedule.indexOf(game) + 1) % 4 === 0 && schedule.indexOf(game) + 1 < 30) ||
+          schedule.indexOf(game) === 29
+        ) {
           if (game.week.toString() === this.state.page) {
             return (
               <p className="stat-filter week-filter yellow" onClick={this.handleClick}>
@@ -81,7 +84,7 @@ export default class Schedule extends React.Component {
               </p>
             );
           }
-        } else if ((schedule.indexOf(game) + 1) % 4 === 0 && (schedule.indexOf(game) + 1) > 30) {
+        } else if ((schedule.indexOf(game) + 1) % 4 === 0 && schedule.indexOf(game) + 1 > 30) {
           if (game.week.toString() === this.state.page) {
             return (
               <p className="stat-filter week-filter yellow" onClick={this.handleClick}>
@@ -104,13 +107,13 @@ export default class Schedule extends React.Component {
     if (this.state.gameClicked === true || window.location.hash.slice(0, 10) === '#schedule/') {
       return <GameStats state={this.state} />;
     } else if (window.location.hash === '#schedule') {
-      const schedule = ScheduleData.map(games => {
+      const schedule = ScheduleData.map((games) => {
         const currentIndex = ScheduleData.indexOf(games);
         if (games.homeScore === 0) {
           games.awayScore = '--';
           games.homeScore = '--';
         }
-        const calculateSeed = homeOrAway => {
+        const calculateSeed = (homeOrAway) => {
           if (homeOrAway === 'home' && currentIndex === 30) {
             return '#1 ';
           } else if (homeOrAway === 'away' && currentIndex === 30) {

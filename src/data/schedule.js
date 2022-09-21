@@ -5,7 +5,7 @@ export function getPointDifferential(team) {
     pointsFor: 0,
     pointsAgainst: 0
   };
-  schedule.map(game => {
+  schedule.map((game) => {
     if (game.homeScore === 0) {
       return null;
     }
@@ -36,7 +36,7 @@ export function getOpposingStats(team) {
     threeAttempts: 0
   };
 
-  schedule.map(game => {
+  schedule.map((game) => {
     if (game.homeScore === 0) {
       return null;
     }
@@ -52,8 +52,8 @@ export function getOpposingStats(team) {
     return null;
   });
 
-  teamObject.opponents.map(opponent => {
-    players.map(player => {
+  teamObject.opponents.map((opponent) => {
+    players.map((player) => {
       if (player.team === opponent) {
         teamObject.twoMakes += player.twoMakes[teamObject.opponents.indexOf(opponent)];
         teamObject.twoAttempts += player.twoAttempts[teamObject.opponents.indexOf(opponent)];
