@@ -21,10 +21,16 @@ export default class TeamStats extends React.Component {
       if (this.state.page === 'general') {
         return (
           <>
-            <div className='row justify-center'>
-              <p className='stat-filter team-stat-filter yellow' onClick={this.handleClick}>general</p>
-              <p className='stat-filter team-stat-filter' onClick={this.handleClick}>offense</p>
-              <p className='stat-filter team-stat-filter' onClick={this.handleClick}>defense</p>
+            <div className="row justify-center">
+              <p className="stat-filter team-stat-filter yellow" onClick={this.handleClick}>
+                general
+              </p>
+              <p className="stat-filter team-stat-filter" onClick={this.handleClick}>
+                offense
+              </p>
+              <p className="stat-filter team-stat-filter" onClick={this.handleClick}>
+                defense
+              </p>
             </div>
             <table>
               <tbody>
@@ -47,10 +53,16 @@ export default class TeamStats extends React.Component {
       if (this.state.page === 'offense') {
         return (
           <>
-            <div className='row justify-center'>
-              <p className='stat-filter team-stat-filter' onClick={this.handleClick}>general</p>
-              <p className='stat-filter team-stat-filter yellow' onClick={this.handleClick}>offense</p>
-              <p className='stat-filter team-stat-filter' onClick={this.handleClick}>defense</p>
+            <div className="row justify-center">
+              <p className="stat-filter team-stat-filter" onClick={this.handleClick}>
+                general
+              </p>
+              <p className="stat-filter team-stat-filter yellow" onClick={this.handleClick}>
+                offense
+              </p>
+              <p className="stat-filter team-stat-filter" onClick={this.handleClick}>
+                defense
+              </p>
             </div>
             <table>
               <tbody>
@@ -64,7 +76,7 @@ export default class TeamStats extends React.Component {
                   <th className="stat-heading">FT</th>
                   <th className="stat-heading">FT%</th>
                 </tr>
-                <TeamStatsFilter state={this.state}/>
+                <TeamStatsFilter state={this.state} />
               </tbody>
             </table>
           </>
@@ -74,10 +86,16 @@ export default class TeamStats extends React.Component {
       if (this.state.page === 'defense') {
         return (
           <>
-            <div className='row justify-center'>
-              <p className='stat-filter team-stat-filter' onClick={this.handleClick}>general</p>
-              <p className='stat-filter team-stat-filter' onClick={this.handleClick}>offense</p>
-              <p className='stat-filter team-stat-filter yellow' onClick={this.handleClick}>defense</p>
+            <div className="row justify-center">
+              <p className="stat-filter team-stat-filter" onClick={this.handleClick}>
+                general
+              </p>
+              <p className="stat-filter team-stat-filter" onClick={this.handleClick}>
+                offense
+              </p>
+              <p className="stat-filter team-stat-filter yellow" onClick={this.handleClick}>
+                defense
+              </p>
             </div>
             <table>
               <tbody>
@@ -99,10 +117,6 @@ export default class TeamStats extends React.Component {
       }
     };
 
-    return (
-        <>
-        {data()}
-        </>
-    );
+    return <>{data()}</>;
   }
 }

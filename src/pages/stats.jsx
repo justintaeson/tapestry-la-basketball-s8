@@ -40,14 +40,14 @@ export default class Stats extends React.Component {
     }
 
     return (
-        <div className="stats-container">
-          <div id="stat-type-team" className="row justify-center" onClick={this.handleClick}>
-            <div className="stat-type">Team</div>
-          </div>
-          <div id="stat-type-player" className="row justify-center" onClick={this.handleClick}>
-            <div className="stat-type">Player</div>
-          </div>
+      <div className="stats-container">
+        <div id="stat-type-team" className="row justify-center" onClick={this.handleClick}>
+          <div className="stat-type">Team</div>
         </div>
+        <div id="stat-type-player" className="row justify-center" onClick={this.handleClick}>
+          <div className="stat-type">Player</div>
+        </div>
+      </div>
     );
   }
 }
