@@ -34,52 +34,44 @@ export function getWins(team) {
 export function getGamesPlayed(team) {
   let gameCounter = 0;
   for (let i = 0; i < schedule.length; i++) {
-    if ((team === schedule[i].homeTeam || team === schedule[i].awayTeam) && schedule[i].homeScore !== 0) {
+    if (
+      (team === schedule[i].homeTeam || team === schedule[i].awayTeam) &&
+      schedule[i].homeScore !== 0
+    ) {
       gameCounter += 1;
     }
   }
   return gameCounter;
 }
 
-export const teams = [
-  {
-    team: 'Run JHC',
-    points: 0
-  },
-  {
-    team: 'Goon Squad',
-    points: 0
-  },
-  {
-    team: 'ABG (Anointed by God)',
-    points: 0
-  },
-  {
-    team: 'Better Call Gasol',
-    points: 0
-  },
-  {
-    team: 'Crossovers For Christ',
-    points: 0
-  },
-  {
-    team: "Robin's Hood",
-    points: 0
-  },
-  {
-    team: 'Victorious Secret',
-    points: 0
-  },
-  {
-    team: 'J-Walkers',
-    points: 0
-  },
-  {
-    team: 'Team Noona',
-    points: 0
-  },
-  {
-    team: 'Kick Your Boaz',
-    points: 0
-  }
-];
+export const SHEET_ID = '159KwisTPdkAZALoqXmWvKTmjvUudiNoRuFlwdSJ4iNw';
+export const SHEET_TITLE = 'Teams';
+export const SHEET_RANGE = 'A2:A11';
+
+export const FULL_URL =
+  'https://docs.google.com/spreadsheets/d/' +
+  SHEET_ID +
+  '/gviz/tq?sheet=' +
+  SHEET_TITLE +
+  '&range=' +
+  SHEET_RANGE;
+
+export const teams = [];
+
+export const createTeams = () => {
+  fetch(FULL_URL)
+    .then((res) => res.text())
+    .then((rep) => {
+      const data = JSON.parse(rep.substr(47).slice(0, -2));
+
+      data.table.rows.map((row) => {
+        teams.push({
+          team: row.c[0].v,
+          points: 0
+        });
+        return true;
+      });
+    });
+};
+
+createTeams();

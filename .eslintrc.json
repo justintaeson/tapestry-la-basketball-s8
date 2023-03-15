@@ -1,67 +1,40 @@
 {
-    "root": true,
-    "env": {
-        "node": true,
-        "browser": true
-    },
-    "extends": [
-        "plugin:react/recommended",
-        "eslint:recommended",
-        "standard"
+  "root": true,
+  "env": {
+    "node": true,
+    "browser": true
+  },
+  "extends": ["plugin:react/recommended", "standard"],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "rules": {
+    "semi": ["error", "always"],
+    "padded-blocks": 0,
+    "arrow-parens": ["error", "always"],
+    "curly": ["error", "multi-line"],
+    "space-before-function-paren": [
+      "error",
+      {
+        "anonymous": "always",
+        "named": "never",
+        "asyncArrow": "always"
+      }
     ],
-    "settings": {
-        "react": {
-            "version": "detect"
-        }
+    "no-unused-vars": 0
+  },
+  "overrides": [
+    {
+      "files": ["**/*.jsx"],
+      "rules": {
+        "react/prop-types": 0
+      }
     },
-    "rules": {
-        "semi": [
-            "error",
-            "always"
-        ],
-        "padded-blocks": 0,
-        "arrow-parens": [
-            "error",
-            "always"
-        ],
-        "curly": [
-            "error",
-            "multi-line"
-        ],
-        "no-console": [
-            "error",
-            {
-                "allow": [
-                    "warn",
-                    "error"
-                ]
-            }
-        ],
-        "space-before-function-paren": [
-            "error",
-            {
-                "anonymous": "always",
-                "named": "never",
-                "asyncArrow": "always"
-            }
-        ]
-    },
-    "overrides": [
-        {
-            "files": [
-                "**/*.jsx"
-            ],
-            "rules": {
-                "react/prop-types": 0
-            }
-        },
-        {
-            "files": [
-                "**/*.html"
-            ],
-            "plugins": [
-                "eslint-plugin-html"
-            ]
-        }
-    ]
+    {
+      "files": ["**/*.html"],
+      "plugins": ["eslint-plugin-html"]
+    }
+  ]
 }
